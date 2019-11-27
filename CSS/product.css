@@ -1,0 +1,72 @@
+@import 'reset.css';
+
+/*导航*/
+#headMessage h1{
+    margin: 0 0 0 31px;
+}
+#headMessage .m1{
+    margin: 0 70px 0 0;
+}
+
+/*搜索*/
+.text>#search,#search,input{
+    background-color: #fff;
+}
+
+#search{
+    margin: 20px auto;
+    width: 1000px;
+}
+
+/*首屏内容*/
+#firstScreen{
+    width: 1270px;
+    border: 1px solid #8eddfad8;
+}
+/*左边内容*/
+#firstScreen .firstLeft{
+    width: 1268px;
+}
+/*侧边导航*/
+#firstScreen .firstLeft .sideNav{
+    width: 255px;
+    height: 522px;
+    border: 1px solid #8eddfad8;
+    box-sizing: border-box;
+}
+.firstLeft .sideNav li{
+    height: 110px;
+    line-height: 75px;
+    padding-left: 17px;
+    color: #999;
+    font-size: 14px;
+    /*过度背景色*/
+    transition: background-color 0.3s;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.firstLeft .sideNav li a{
+    font-size: 14px;
+    color: #666;
+}
+.firstLeft .sideNav li span{
+    font-size: 12px;
+    margin-right: 5px;
+}
+.firstLeft .sideNav li:hover{
+    background: #ffe4dc;
+    color: #f50;
+}
+.firstLeft .sideNav li:hover a{
+    color: #f50;
+}
+.firstLeft .sideNav a:hover{
+    text-decoration: underline;
+}
+
+/*图片1容器*/
+#myCarousel{
+    width: 1013px;
+    height: 522px;
+    border: 1px solid #8eddfad8;
+}

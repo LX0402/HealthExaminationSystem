@@ -1,0 +1,78 @@
+@import 'reset.css';
+
+body{
+    height: 620px;
+}
+
+/*头部信息*/
+#headMessage{
+    background-image: linear-gradient(to right,rgb(248, 242, 242) 30%,#cefdfd 100%);
+    border-radius: 20px 20px 20px 20px;
+}
+#headMessage h1{
+    padding: 15px 0px 10px;
+}
+#headMessage h1 a{
+    display: block;
+    width: 200px;
+    height: 50px;
+    background: url(../images/logo.png) center no-repeat;
+    /*首行缩进*/
+    text-indent: -999px;
+    overflow: hidden;
+}
+#headMessage li{
+    float: left;
+    line-height: 75px;
+    padding: 0 6px;
+    font-size: 0px;
+}
+#headMessage li a{
+    color: #000;
+    font-size: 20px;
+    padding: 6px 15px;
+}
+#headMessage li a:hover{
+    text-decoration: none;
+    background-image: linear-gradient(to right,#c4abf8da 0,#8eddfad8 100%);
+    color: #fff;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff9000', endColorstr='#ffff5000', GradientType=1);
+    border-radius: 20px 20px 20px 20px;
+}
+
+/*登录*/
+#login{
+    width: 500px;
+    height: 365px;
+    margin-top:50px;
+    margin-left:382px;
+    background: url(../images/timg.gif) center no-repeat;
+    z-index: 2;
+}
+#login .input_box .p1,#login .input_box .p2{
+    font-weight: bolder;
+    color: #fc84e8;
+}
+#login .input_box .p1{
+    padding: 50px 207px 5px;
+}
+#login .input_box .p2{
+    padding: 30px 237px 5px;
+}
+#login .input_box #uname,#login .input_box #upass{
+    width: 200px;
+    height: 30px;
+    margin: 0 148px 5px;
+}
+#login .input_box .btn{
+    width: 85px;
+    height: 30px;
+    color: #fff;
+    background-color: #fc84e8;
+    border-radius: 20px 20px 20px 20px;
+    outline: none;
+    border: none;
+}
+#login .input_box .btn-primary{
+    margin: 25px 20px 5px 148px;
+}

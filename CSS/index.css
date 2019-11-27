@@ -1,0 +1,94 @@
+@import 'reset.css';
+
+body{
+    background: url(../images/bg.jpg) center no-repeat;
+    background-size: 100% 100%;
+}
+/*头部信息*/
+#headMessage h1{
+    padding: 15px 0px 10px;
+}
+#headMessage h1 a{
+    display: block;
+    width: 200px;
+    height: 50px;
+    background: url(../images/logo.png) center no-repeat;
+    /*首行缩进*/
+    text-indent: -999px;
+    overflow: hidden;
+}
+#headMessage li{
+    float: left;
+    line-height: 75px;
+    padding: 0 6px;
+    font-size: 0px;
+}
+#headMessage li a{
+    color: #000;
+    font-size: 20px;
+    padding: 6px 15px;
+    text-decoration: none;
+}
+#headMessage li a:hover{
+    color: #fff;
+    background-image: linear-gradient(to right,#c4abf8da 0,#8eddfad8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff9000', endColorstr='#ffff5000', GradientType=1);
+    border-radius: 20px 20px 20px 20px;
+}
+#headMessage li a span{
+    font-weight: bolder;
+}
+
+/*轮播图*/
+#myCarousel span{
+    opacity: 0.3;
+}
+
+/*介绍*/
+#introduce{
+    width: 1000px;
+    margin: 50px auto;
+    text-align: center;
+}
+#introduce h2{
+    color: #000;
+    font-weight: bold;
+}
+#introduce p{
+    font-size: 16px;
+}
+
+/*联系我们*/
+#contact{
+    height: 200px;
+}
+#contact h3{
+    margin: 59px 0 0 150px;
+}
+#contact h3 img{
+    height: 100px;
+    font-size: 0;
+    font-weight: normal;
+}
+#contact h3 i{
+    color: #000;
+    vertical-align: middle;
+    font-size: 23px;
+    margin: 0 0 0 50px;
+}
+#contact h3 i span{
+    font-size: 23px;
+}
+#contact h3 p{
+    color: #2f3030;
+    font-size: 15px;
+    margin: 5px 0 0 150px;
+}
+#contact .p1{
+    height: 100px;
+    margin: 50px 100px 0 0;
+}
+#contact .p2{
+    height: 100px;
+    margin: 50px 20px 0 0;
+}

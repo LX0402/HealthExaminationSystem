@@ -1,0 +1,75 @@
+@import 'reset.css';
+
+#headMessage{
+    background-image: linear-gradient(to right,rgb(248, 242, 242) 30%,#cefdfd 100%);
+    border-radius: 20px 20px 20px 20px;
+}
+#headMessage h1{
+    padding: 15px 0px 10px;
+}
+#headMessage h1 a{
+    display: block;
+    width: 200px;
+    height: 50px;
+    background: url(../images/logo.png) center no-repeat;
+    /*首行缩进*/
+    text-indent: -999px;
+    overflow: hidden;
+}
+#headMessage li{
+    float: left;
+    line-height: 75px;
+    padding: 0 6px;
+    font-size: 0px;
+}
+#headMessage li a{
+    color: #000;
+    font-size: 20px;
+    padding: 6px 15px;
+}
+#headMessage li a:hover{
+    text-decoration: none;
+    background-image: linear-gradient(to right,#c4abf8da 0,#8eddfad8 100%);
+    color: #fff;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff9000', endColorstr='#ffff5000', GradientType=1);
+    border-radius: 20px 20px 20px 20px;
+}
+
+/*忘记*/
+#forget{
+    width: 500px;
+    height: 365px;
+    margin-top:50px;
+    margin-left:382px;
+    background: url(../images/timg.gif) center no-repeat;
+    z-index: 2;
+}
+#forget .input_box .f1,#forget .input_box .f2,#forget .input_box .f3{
+    font-weight: bolder;
+    color: #fc84e8;
+}
+#forget .input_box .f1{
+    padding: 30px 207px 5px;
+}
+#forget .input_box .f2{
+    padding: 30px 230px 5px;
+}
+#forget .input_box .f3{
+    padding: 30px 224px 5px;
+}
+#forget .input_box #uname,#forget .input_box #upass,#forget .input_box #npass{
+    width: 200px;
+    height: 30px;
+    margin: 0 148px 5px;
+}
+#forget .input_box .btn{
+    width: 115px;
+    height: 35px;
+    color: #fff;
+    background-color: #fc84e8;
+    font-size: 16px;
+    border-radius: 20px 20px 20px 20px;
+    outline: none;
+    border: none;
+    margin: 5px 20px 5px 190px;
+}
