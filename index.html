@@ -38,10 +38,25 @@
             <!--右边-->
             <ul class="fr">
                 <li>
-                    <a onclick="login();"><span class="iconfont">&#xe613;</span>登录</a>
-                </li>
+                    <div id="content">
+                        <a><span class="iconfont">&#xe613;</span>登录</a>
+                    </div>
+                    <form actlion="#" method="post"> 
+                        <div id="alert"> 
+                            <h4><span id="close">关闭</span></h4> 
+                            <p><label> 用户名</label><input type="text" class="myinp" onmouseover="this.style.border='1px solid #f60'"  
+                        
+                            onfoucs="this.style.border='1px solid #f60'" onblur="this.style.border='1px solid #ccc'" /></p> 
+                            <p><label> 密　码</label><input type="password" class="myinp" onmouseover="this.style.border='1px solid #f60'"  
+                            
+                            onfoucs="this.style.border='1px solid #f60'" onblur="this.style.border='1px solid #ccc'" /></p> 
+                            <p><input type="submit" value="注册" class="sub" /><input type="reset" value="重置" class="sub" /></p> 
+                        </div>
+                    </form>
+                </li> 
+                
                 <li>
-                    <a href="register.html"><span class="iconfont">&#xe69a;</span>注册</a>
+                    <a href="#"><span class="iconfont">&#xe69a;</span>注册</a>
                 </li>
             </ul>
         </div>
@@ -80,7 +95,7 @@
         <!--联系我们-->
         <div id="contact" class="lay clearfix">
             <h3 class="fl">
-                <img class="fl" src="../HealthExaminationSystem/images/photo1.png">
+                <img class="fl" src="../HealthExaminationSystem/images/photo.png">
                 <i><span class="iconfont">&#xe769;</span>联系我们</i>
                 <p>体检——助你校正健康坐标</p>
                 <p>联系方式：2534653654</p>
