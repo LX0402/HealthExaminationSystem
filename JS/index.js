@@ -20,3 +20,7 @@ setInterval(async function() {
     }
 }, delay);
 
+function login(){
+    Modal.dialog({id:"dialog_login",title:"登录",url:"../HealthExaminationSystem/login.html",width:1200,height:800});
+}
+
