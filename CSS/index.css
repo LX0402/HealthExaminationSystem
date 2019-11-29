@@ -1,7 +1,7 @@
 @import 'reset.css';
 
 body{
-    background: url(../images/bg2.jpg) center no-repeat;
+    background: url(../images/bg1.jpg) center no-repeat;
     background-size: 100% 100%;
 }
 /*头部信息*/
@@ -38,6 +38,54 @@ body{
 #headMessage li a span{
     font-weight: bolder;
 }
+/*登录*/
+#content {
+    background:#f8f8f8;
+    padding:30px;
+    height:100%;
+} 
+#content a {
+    font-size:30px;
+    color:#369;
+    font-weight:700;
+} 
+#alert {
+    border:1px solid #369;
+    width:300px;height:150px;
+    background:#e2ecf5;
+    z-index:1000;
+    position:absolute;
+    display:none;
+} 
+#alert h4 {
+    height:20px;
+    background:#369;
+    color:#fff;
+    padding:5px 0 0 5px;
+} 
+#alert h4 span {
+    float:left;
+} 
+#alert h4 span#close {
+    margin-left:210px;
+    font-weight:500;
+    cursor:pointer;
+} 
+#alert p {
+    padding:12px 0 0 30px;
+} 
+#alert p input {
+    width:120px;
+    margin-left:20px;
+} 
+#alert p input.myinp {
+    border:1px solid #ccc;
+    height:16px;
+} 
+#alert p input.sub {
+    width:60px;
+    margin-left:30px;
+} 
 
 /*登录*/
 #login{
@@ -281,7 +329,7 @@ body{
     color: #000;
     vertical-align: middle;
     font-size: 23px;
-    margin: 0 0 0 40px;
+    margin: 0 0 0 50px;
 }
 #contact h3 i span{
     font-size: 23px;
@@ -289,7 +337,7 @@ body{
 #contact h3 p{
     color: #2f3030;
     font-size: 15px;
-    margin: 5px 0 0 145px;
+    margin: 5px 0 0 150px;
 }
 #contact .p1{
     height: 100px;
