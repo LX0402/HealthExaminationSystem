@@ -29,18 +29,58 @@
                     <a href="#">新品</a>
                 </li>
                 <li>
-                    <a href="login.html"><span class="iconfont">&#xe63e;</span>预约</a>
+                    <a class="login" href="#"><span class="iconfont">&#xe63e;</span>预约</a>
                 </li>
             </ul>
 
             <!--右边-->
             <ul class="fr">
                 <li>
-                    <a href="login.html"><span class="iconfont">&#xe613;</span>登录</a>
+                    <a class="login" href="#"><span class="iconfont">&#xe613;</span>登录</a>
                 </li>
+                <!--登录-->
+                <form id="login" class="box">
+                    <div class="input_box">
+                        <p class="p1">手机号/证件号</p>
+                        <input id="uname" type="text" name="user">
+                    </div>
+                    <div class="input_box">
+                        <p class="p2">密码</p>
+                        <input id="upass" type="password" name="psw">
+                    </div>
+                    <div id="error_box"><br></div>
+                    <div class="input_box">
+                        <button type="button" class="btn btn-primary" onclick="fnLogin()">登录</button>    
+                        <a href="#">
+                            <input type="button" class="btn btn-info" name="regist" value="注册">
+                        </a>
+                    </div>
+                </form>
+
                 <li>
-                    <a href="register.html"><span class="iconfont">&#xe69a;</span>注册</a>
+                    <a class="register" href="#"><span class="iconfont">&#xe69a;</span>注册</a>
                 </li>
+                <!--注册-->
+                <form id="register" class="box">
+                    <div class="input_box">
+                        <p class="p1">证件号</p>
+                        <input id="uname" type="text" name="user">
+                    </div>
+                    <div class="input_box">
+                        <p class="p2">密码</p>
+                        <input id="upass" type="password" name="psw">
+                    </div>
+                    <div class="input_box">
+                        <p class="p3">手机号</p>
+                        <input id="utel" type="text" name="tel">
+                    </div>
+                    <div id="error_box"><br></div>
+                    <div class="input_box">  
+                        <a href="#">
+                            <input type="button" class="btn btn-info" name="register" value="注册">
+                        </a>
+                    </div>
+                </form>
             </ul>
         </div>
 
@@ -64,11 +104,63 @@
             </a>
         </div>
 
+        <!--产品-->
+        <div id="firstScreen" class="lay clearfix">
+            <div class="title">
+                <img src="../HealthExaminationSystem/images/bt2.png">
+            </div>
+            <!--侧边导航-->
+            <div class="sideNav fl">
+                <ul>
+                    <li>
+                        <a href="#">套餐一</a><span class="iconfont fr">&#xe63d;</span>
+                    </li>
+                    <li>
+                        <a href="#">套餐二</a><span class="iconfont fr">&#xe63d;</span>
+                    </li>    
+                    <li>
+                        <a href="#">套餐三</a><span class="iconfont fr">&#xe63d;</span>
+                    </li>
+                    <li>
+                        <a href="#">套餐四</a><span class="iconfont fr">&#xe63d;</span>
+                    </li>
+                    <li>
+                        <a href="#">套餐五</a><span class="iconfont fr">&#xe63d;</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!--图片容器-->
+            <div class="middle_right">
+                <div id="lunbobox">
+                    <div id="toleft">&lt;</div>
+                        <div class="lunbo">
+                            <a href="#"><img src="http://www.jq22.com/img/cs/500x300a.png"></a>
+                            <a href="#"><img src="http://www.jq22.com/img/cs/500x300b.png"></a>
+                            <a href="#"><img src="http://www.jq22.com/img/cs/500x300c.png"></a>
+                            <a href="#"><img src="http://www.jq22.com/img/cs/500x300d.png"></a>
+                            <a href="#"><img src="http://www.jq22.com/img/cs/500x300.png"></a>
+                        </div>
+                        <div id="toright">&gt;</div>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
         <!--介绍-->
         <div id="introduce">
-            <i>————————</i>
-            <h2>简介</h2>
-            <i>————————</i>
+            <div class="title">
+                <img src="../HealthExaminationSystem/images/bt3.png">
+            </div>
             <p>创于2004年，总部位于上海，于2018年正式完成中国版图的全覆盖（除港、澳、台地区），集团于2015年8月成功在A股上市（SZ：002044），
                 分别于2016年、2017年收购“美兆”、“慈铭”，成为医疗和大健康板块中市值和影响力杰出的上市公司。2018年5月15日，纳入MSCI 指数，
                 同年10月19日，获得穆迪BA2、惠誉BB+评分，得到国际最高级别评级机构支持。美年健康现为中证200指数、沪深300指数、中证700指数、

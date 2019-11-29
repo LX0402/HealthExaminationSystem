@@ -39,9 +39,214 @@ body{
     font-weight: bolder;
 }
 
+/*登录*/
+#login{
+    width: 500px;
+    height: 365px;
+    margin-top:50px;
+    margin-left:382px;
+    background: url(../images/timg.gif) center no-repeat;
+    z-index: 50;
+}
+#login .input_box .p1,#login .input_box .p2{
+    font-weight: bolder;
+    color: #fc84e8;
+}
+#login .input_box .p1{
+    padding: 50px 207px 5px;
+}
+#login .input_box .p2{
+    padding: 30px 237px 5px;
+}
+#login .input_box #uname,#login .input_box #upass{
+    width: 200px;
+    height: 30px;
+    margin: 0 148px 5px;
+}
+#login .input_box .btn{
+    width: 85px;
+    height: 30px;
+    color: #fff;
+    background-color: #fc84e8;
+    border-radius: 20px 20px 20px 20px;
+    outline: none;
+    border: none;
+}
+#login .input_box .btn-primary{
+    margin: 25px 20px 5px 148px;
+}
+
+/*注册*/
+#register{
+    width: 500px;
+    height: 365px;
+    margin-top:50px;
+    margin-left:382px;
+    background: url(../images/timg.gif) center no-repeat;
+    z-index: 2;
+}
+#register .input_box .p1,#register .input_box .p2,#register .input_box .p3{
+    font-weight: bolder;
+    color: #fc84e8;
+}
+#register .input_box .p1{
+    padding: 30px 230px 5px;
+}
+#register .input_box .p2{
+    padding: 30px 237px 5px;
+}
+#register .input_box .p3{
+    padding: 30px 230px 5px;
+}
+#register .input_box #uname,#register .input_box #upass,#register .input_box #utel{
+    width: 200px;
+    height: 30px;
+    margin: 0 148px 5px;
+}
+#register .input_box .btn{
+    width: 115px;
+    height: 35px;
+    color: #fff;
+    background-color: #fc84e8;
+    font-size: 16px;
+    border-radius: 20px 20px 20px 20px;
+    outline: none;
+    border: none;
+    margin: 5px 20px 5px 190px;
+}
+
 /*轮播图*/
 #myCarousel span{
     opacity: 0.3;
+}
+
+/*产品*/
+#firstScreen{
+    width: 1265px;
+}
+#firstScreen .title img{
+    margin:50px 553px 20px;
+    width: 155px;
+    height: 95px;
+}
+/*左边内容*/
+#firstScreen {
+    width: 1265x;
+    z-index: 10;
+}
+/*侧边导航*/
+#firstScreen  .sideNav{
+    width: 250px;
+    height: 551px;
+    border: 1px solid #8eddfad8;
+    box-sizing: border-box;
+}
+ .sideNav li{
+    height: 110px;
+    line-height: 110px;
+    padding-left: 17px;
+    color: #999;
+    font-size: 14px;
+    /*过度背景色*/
+    transition: background-color 0.3s;
+    overflow: hidden;
+    white-space: nowrap;
+}
+ .sideNav li a{
+    font-size: 15px;
+    font-weight: bold;
+    color: #666;
+}
+ .sideNav li span{
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+ .sideNav li:hover{
+    background: #d5e7f3;
+    color: #e1c68b;
+}
+ .sideNav li:hover a{
+    color: #e1c68b;
+}
+ .sideNav a:hover{
+    text-decoration: underline;
+}
+
+/*图片1容器*/
+#firstScreen .middle_right{
+    width:1015px;
+    height:550px;
+    position:relative;
+    left: 250px;
+}
+#firstScreen #lunbobox {
+	width:1012px;
+	height:550px;
+    position:absolute;
+    top:0px;
+}
+#firstScreen .lunbo {
+	width:1012px;
+    height:550px;
+    overflow: hidden;
+}
+#firstScreen .lunbo img {
+	width:1012px;
+	height:550px;
+    position:absolute;
+    
+}
+#firstScreen #lunbobox ul {
+	width:285px;
+	position:absolute;
+	bottom:25px;
+	right:0px;
+    z-index:5;
+    left:440px;
+}
+#firstScreen #lunbobox ul li {
+	cursor:pointer;
+	width:25px;
+	height:5px;
+	border:1px solid #cccccc;
+	float:left;
+	list-style:none;
+	background:#cccccc;
+	text-align:center;
+	margin:0px 5px 0px 0px;
+}
+#firstScreen #toleft {
+	display:none;
+	width:30px;
+	height:100px;
+	font-size:40px;
+	line-height:100px;
+	text-align:center;
+	color:#f4f4f4;
+    left:0px;
+    position:absolute;
+	top:205px;
+	left:35px;
+	cursor:pointer;
+	z-index:99;
+	opacity:0.4;
+}
+#firstScreen #toright {
+	display:none;
+	width:30px;
+	height:100px;
+	font-size:40px;
+	line-height:100px;
+	text-align:center;
+	color:#f4f4f4;
+    left:945px;
+    position:absolute;
+	top:205px;
+	right:0px;
+	cursor:pointer;
+	z-index:99;
+	opacity:0.4;
 }
 
 /*介绍*/
@@ -50,12 +255,14 @@ body{
     margin: 50px auto;
     text-align: center;
 }
-#introduce h2{
-    color: #000;
-    font-weight: bold;
+#introduce .title img{
+    margin:50px 423px 20px;
+    width: 155px;
+    height: 95px;
 }
 #introduce p{
     font-size: 16px;
+    margin: 5px 0 0;
 }
 
 /*联系我们*/
