@@ -1,3 +1,5 @@
+
+/*轮播图*/
 //打开页面时自动播放
 $("#myCarousel").carousel('cycle');
 $("#myCarousel-second").carousel('cycle');
@@ -241,8 +243,10 @@ $(".newFive").hide()
 $(document).ready(function(){
     $(".comboOne").mouseover(function (){
         $(".newOne").show();
+        $("#lunbobox").hide();
     }).mouseout(function (){
         $(".newOne").hide();
+        $("#lunbobox").show();
     });
 });
 
