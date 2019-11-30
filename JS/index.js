@@ -25,12 +25,16 @@ function login(){
 }*/
 
 /*登录*/
-$("form").hide()
+$("#login").hide()
 $(document).ready(function(){
     $(".login").click(function(){
         $("#login").show();
     });
+    $(".iconfont").click(function(){
+        $("#login").hide();
+    });
 });
+
 
 function fnLogin() {
     var oUname = document.getElementById("uname")
@@ -61,6 +65,9 @@ $("#register").hide()
 $(document).ready(function(){
     $(".register").click(function(){
         $("#register").show();
+    });
+    $(".iconfont").click(function(){
+        $("#register").hide();
     });
 });
 
@@ -222,3 +229,40 @@ $("#lunbobox ul li,.lunbo a img,#toright,#toleft ").hover(
             $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000);
         }
     })
+
+
+/*套餐信息*/
+$(".newOne").hide()
+$(".newTwo").hide()
+$(".newThird").hide()
+$(".newFour").hide()
+$(".newFive").hide()
+
+$(document).ready(function(){
+    $(".comboOne").mouseover(function (){
+        $(".newOne").show();
+    }).mouseout(function (){
+        $(".newOne").hide();
+    });
+});
+
+$(".comboTwo").mouseover(function (){
+    $(".newTwo").show();
+}).mouseout(function (){
+    $(".newTwo").hide();
+});
+$(".comboThird").mouseover(function (){
+    $(".newThird").show();
+}).mouseout(function (){
+    $(".newThird").hide();
+});
+$(".comboFour").mouseover(function (){
+    $(".newFour").show();
+}).mouseout(function (){
+    $(".newFour").hide();
+});
+$(".comboFive").mouseover(function (){
+    $(".newFive").show();
+}).mouseout(function (){
+    $(".newFive").hide();
+});

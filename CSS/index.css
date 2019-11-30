@@ -32,135 +32,104 @@ body{
 #headMessage li a:hover{
     color: #fff;
     background-image: linear-gradient(to right,#c4abf8da 0,#8eddfad8 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff9000', endColorstr='#ffff5000', GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c4abf8da', endColorstr='#8eddfad8', GradientType=1);
     border-radius: 20px 20px 20px 20px;
 }
 #headMessage li a span{
     font-weight: bolder;
 }
-/*登录*/
-#content {
-    background:#f8f8f8;
-    padding:30px;
-    height:100%;
-} 
-#content a {
-    font-size:30px;
-    color:#369;
-    font-weight:700;
-} 
-#alert {
-    border:1px solid #369;
-    width:300px;height:150px;
-    background:#e2ecf5;
-    z-index:1000;
-    position:absolute;
-    display:none;
-} 
-#alert h4 {
-    height:20px;
-    background:#369;
-    color:#fff;
-    padding:5px 0 0 5px;
-} 
-#alert h4 span {
-    float:left;
-} 
-#alert h4 span#close {
-    margin-left:210px;
-    font-weight:500;
-    cursor:pointer;
-} 
-#alert p {
-    padding:12px 0 0 30px;
-} 
-#alert p input {
-    width:120px;
-    margin-left:20px;
-} 
-#alert p input.myinp {
-    border:1px solid #ccc;
-    height:16px;
-} 
-#alert p input.sub {
-    width:60px;
-    margin-left:30px;
-} 
 
 /*登录*/
 #login{
     width: 500px;
     height: 365px;
-    margin-top:50px;
-    margin-left:382px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);/*水平居中*/
+    width: 90%;
     background: url(../images/timg.gif) center no-repeat;
-    z-index: 50;
+    z-index: 2001;
+    top: 100px;
+}
+#login .iconfont{
+    margin: 7px 30%;
+    cursor:pointer;
+    color: #fc84e8;
 }
 #login .input_box .p1,#login .input_box .p2{
     font-weight: bolder;
     color: #fc84e8;
 }
 #login .input_box .p1{
-    padding: 50px 207px 5px;
+    padding: 50px 556px 5px;
 }
 #login .input_box .p2{
-    padding: 30px 237px 5px;
+    padding: 30px 590px 5px;
 }
 #login .input_box #uname,#login .input_box #upass{
     width: 200px;
     height: 30px;
-    margin: 0 148px 5px;
+    margin: 0 505px 5px;
 }
 #login .input_box .btn{
     width: 85px;
-    height: 30px;
+    height: 35px;
     color: #fff;
-    background-color: #fc84e8;
     border-radius: 20px 20px 20px 20px;
     outline: none;
     border: none;
 }
 #login .input_box .btn-primary{
-    margin: 25px 20px 5px 148px;
+    margin: 25px 20px 5px 510px;
+}
+#login .input_box .btn-info{
+    margin:18px 0 0 0;
 }
 
 /*注册*/
 #register{
     width: 500px;
     height: 365px;
-    margin-top:50px;
-    margin-left:382px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);/*水平居中*/
+    width: 90%;
     background: url(../images/timg.gif) center no-repeat;
-    z-index: 2;
+    z-index: 2001;
+    top: 100px;
+}
+#register .iconfont{
+    margin: 7px 30%;
+    cursor:pointer;
+    color: #fc84e8;
 }
 #register .input_box .p1,#register .input_box .p2,#register .input_box .p3{
     font-weight: bolder;
     color: #fc84e8;
 }
 #register .input_box .p1{
-    padding: 30px 230px 5px;
+    padding: 30px 586px 5px;
 }
 #register .input_box .p2{
-    padding: 30px 237px 5px;
+    padding: 30px 594px 5px;
 }
 #register .input_box .p3{
-    padding: 30px 230px 5px;
+    padding: 30px 587px 5px;
 }
 #register .input_box #uname,#register .input_box #upass,#register .input_box #utel{
     width: 200px;
     height: 30px;
-    margin: 0 148px 5px;
+    margin: 0 505px 5px;
 }
 #register .input_box .btn{
     width: 115px;
     height: 35px;
     color: #fff;
-    background-color: #fc84e8;
     font-size: 16px;
     border-radius: 20px 20px 20px 20px;
     outline: none;
     border: none;
-    margin: 5px 20px 5px 190px;
+    margin: 5px 20px 5px 540px;
 }
 
 /*轮播图*/
@@ -250,7 +219,6 @@ body{
 	position:absolute;
 	bottom:25px;
 	right:0px;
-    z-index:5;
     left:440px;
 }
 #firstScreen #lunbobox ul li {
@@ -295,6 +263,32 @@ body{
 	cursor:pointer;
 	z-index:99;
 	opacity:0.4;
+}
+
+/*套餐信息*/
+#firstScreen .news{
+    clear: both;
+}
+#firstScreen .news .newOne,#firstScreen .news .newTwo,#firstScreen .news .newThird,#firstScreen .news .newFour,#firstScreen .news .newFive{
+    width:1015px;
+    height:550px;
+    z-index: 6000;
+    position: absolute;
+}
+#firstScreen .news .newOne{
+    background-color: #000;
+}
+#firstScreen .news .newTwo{
+    background-color: rgb(16, 223, 85);
+}
+#firstScreen .news .newThird{
+    background-color: rgb(250, 6, 6);
+}
+#firstScreen .news .newFour{
+    background-color: rgb(7, 132, 204);
+}
+#firstScreen .news .newFive{
+    background-color: rgb(247, 21, 153);
 }
 
 /*介绍*/
