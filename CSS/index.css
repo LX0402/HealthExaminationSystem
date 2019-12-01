@@ -41,18 +41,17 @@ body{
 
 /*登录*/
 #login{
-    width: 500px;
     height: 365px;
     position: absolute;
     left: 50%;
     transform: translate(-50%,0);/*水平居中*/
-    width: 90%;
+    width: 100%;
     background: url(../images/timg.gif) center no-repeat;
     z-index: 2001;
     top: 100px;
 }
-#login .iconfont{
-    margin: 7px 30%;
+#login .close{
+    margin: 1% 33%;
     cursor:pointer;
     color: #fc84e8;
 }
@@ -61,15 +60,17 @@ body{
     color: #fc84e8;
 }
 #login .input_box .p1{
-    padding: 50px 556px 5px;
+    padding: 50px 628px 5px;
 }
 #login .input_box .p2{
-    padding: 30px 590px 5px;
+    padding: 30px 661px 5px;
 }
 #login .input_box #uname,#login .input_box #upass{
-    width: 200px;
-    height: 30px;
-    margin: 0 505px 5px;
+    width: 250px;
+    height: 35px;
+    outline: none;
+    border-radius: 20px 20px 20px 20px;
+    margin: 0 552px 5px;
 }
 #login .input_box .btn{
     width: 85px;
@@ -79,27 +80,34 @@ body{
     outline: none;
     border: none;
 }
-#login .input_box .btn-primary{
-    margin: 25px 20px 5px 510px;
+#login #error_box{
+    color: #fc0107;
+    margin: 25px 64px 5px 556px;
 }
-#login .input_box .btn-info{
-    margin:18px 0 0 0;
+#login .input_box .primary{
+    margin: 0 64px 5px 556px;
+}
+#login .input_box .info{
+    margin:-3px 0 0 0;
 }
 
 /*注册*/
 #register{
-    width: 500px;
     height: 365px;
     position: absolute;
     left: 50%;
+    width: 100%;
     transform: translate(-50%,0);/*水平居中*/
-    width: 90%;
     background: url(../images/timg.gif) center no-repeat;
     z-index: 2001;
     top: 100px;
 }
-#register .iconfont{
-    margin: 7px 30%;
+#register #error_box1{
+    color: #fc0107;
+    margin: 0 64px 5px 556px;
+}
+#register .close{
+    margin: 1% 33%;
     cursor:pointer;
     color: #fc84e8;
 }
@@ -107,19 +115,18 @@ body{
     font-weight: bolder;
     color: #fc84e8;
 }
-#register .input_box .p1{
-    padding: 30px 586px 5px;
+#register .input_box .p1,#register .input_box .p3{
+    padding: 15px 654px 5px;
 }
 #register .input_box .p2{
-    padding: 30px 594px 5px;
-}
-#register .input_box .p3{
-    padding: 30px 587px 5px;
+    padding: 15px 660px 5px;
 }
 #register .input_box #uname,#register .input_box #upass,#register .input_box #utel{
-    width: 200px;
-    height: 30px;
-    margin: 0 505px 5px;
+    width: 250px;
+    height: 35px;
+    outline: none;
+    border-radius: 20px 20px 20px 20px;
+    margin: 0 551px 5px;
 }
 #register .input_box .btn{
     width: 115px;
@@ -129,13 +136,91 @@ body{
     border-radius: 20px 20px 20px 20px;
     outline: none;
     border: none;
-    margin: 5px 20px 5px 540px;
+    margin: 10px 0 0 616px;
 }
 
 /*轮播图*/
 #myCarousel span{
     opacity: 0.3;
 }
+
+/*预约*/
+#appointment{
+    height: 365px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);/*水平居中*/
+    width: 100%;
+    background: url(../images/timg.gif) center no-repeat;
+    z-index: 2001;
+    top: 100px;
+}
+#appointment .close{
+    margin: 1% 33%;
+    cursor:pointer;
+    color: #fc84e8;
+}
+#appointment .input_box1{
+    margin: 38px 0 25px 600px;
+    color: #fc84e8;
+    font-weight: bolder;
+}
+#appointment .input_box1 .usex{
+    vertical-align: middle;
+    width: 40px;
+    height: 33px;
+}
+#appointment .input_box2 .p2,#appointment .input_box3 .p3,#appointment .input_box4 .p4{
+    line-height: 33px;
+    font-weight: bolder;
+    margin-right: 5px;
+    color: #fc84e8;
+}
+#appointment .input_box2{
+    height: 35px;
+    width: 100px;
+    box-sizing: border-box;
+    margin: 12px 0 25px 609px;
+}
+#appointment .input_box2 #uage{
+    margin: -2px 30px;
+}
+#appointment .input_box3{
+    width: 154px;
+}
+#appointment .input_box3,#appointment .input_box4{
+    height: 35px;
+    box-sizing: border-box;
+    margin: 12px 0 25px 600px;
+}
+#appointment .input_box2 #uage,#appointment .input_box3 select,#appointment .input_box4 #utime{
+    position: absolute;
+    height: 35px;
+    width: 90px;
+    outline: none;
+    border: 2px solid #48b7d9;
+    border-radius: 20px 20px 20px 20px;
+}
+#appointment .input_box3 select{
+    color: #4b4848;
+    margin: -2px 13px;
+}
+#appointment .input_box4{
+    width: 213px;
+}
+#appointment .input_box4 #utime{
+    margin: -2px 13px;
+}
+#appointment .input_box .btn{
+    width: 85px;
+    height: 35px;
+    color: #fff;
+    border-radius: 20px 20px 20px 20px;
+    outline: none;
+    border: none;
+    margin: 0 632px;
+}
+
 
 /*产品*/
 #firstScreen{
@@ -346,3 +431,6 @@ body{
     height: 100px;
     margin: 50px 20px 0 0;
 }
+
+
+/**/

@@ -77,3 +77,14 @@ body{
     width: 1300px;
     margin: 0px auto;
 }
+
+/*颜色*/
+.f1{
+    font-size: 12px;
+}
+.c1{
+    color: #48b7d9;
+}
+.c2{
+    color: #fc84e8;
+}

@@ -1,14 +1,13 @@
+/*导航栏*/
+$(".loginBefore").hide()
 
 /*轮播图*/
-//打开页面时自动播放
 $("#myCarousel").carousel('cycle');
 $("#myCarousel-second").carousel('cycle');
 
-//本页执行
 $('.btn[type="submit"]').click(function(e) {
     e.preventDefault();
 });
-//停留时间
 var delay = 5000;
 var itemCount = 5;
 var area = $("#roll");
@@ -21,10 +20,40 @@ setInterval(async function() {
         area.scrollTop(0);
     }
 }, delay);
-/*
-function login(){
-    Modal.dialog({id:"dialog_login",title:"登录",url:"../HealthExaminationSystem/login.html",width:1200,height:800});
-}*/
+
+/*预约*/
+$("#appointment").hide()
+$(document).ready(function(){
+    $(".appointment").click(function(){
+        $("#appointment").show();
+    });
+    $(".iconfont").click(function(){
+        $("#appointment").hide();
+    });
+});
+function fnAppointment() {
+    var oUname = document.getElementById("uname")
+    var oUpass = document.getElementById("upass")
+    var oError = document.getElementById("error_box")
+    var isError = true;
+    if (oUname.value.length == 11 && oUname.value.length == 18) {
+        oError.innerHTML = "账号请输入手机号或身份证号";
+        isError = false;
+        return;
+    }else for(var i=0;i<oUname.value.charCodeAt(i);i++){
+        if((oUname.value.charCodeAt(i)<48)||(oUname.value.charCodeAt(i)>57) && (oUname.value.charCodeAt(i)<97)||(oUname.value.charCodeAt(i)>122)){
+            oError.innerHTML = "必须为字母跟数字组成";
+            return;
+        }
+    }
+    
+    if (oUpass.value.length > 20 || oUpass.value.length < 6) {
+        oError.innerHTML = "密码请输入6-20位字符"
+        isError = false;
+        return;
+    }
+    window.alert("预约成功")
+}
 
 /*登录*/
 $("#login").hide()
@@ -36,7 +65,11 @@ $(document).ready(function(){
         $("#login").hide();
     });
 });
-
+$(document).ready(function(){
+    $(".register").click(function(){
+        $("#register").show();
+    });
+});
 
 function fnLogin() {
     var oUname = document.getElementById("uname")
@@ -60,6 +93,9 @@ function fnLogin() {
         return;
     }
     window.alert("登录成功")
+    $(".loginBefore").show();
+    $(".right").hide()
+    $(".loginAfter").hide()
 }
 
 /*注册*/
@@ -77,7 +113,7 @@ function fnregister() {
     var oUname = document.getElementById("uname")
     var oUpass = document.getElementById("upass")
     var oUtel = document.getElementById("utel")
-    var oError = document.getElementById("error_box")
+    var oError = document.getElementById("error_box1")
     var isError = true;
     if (oUname.value.length == 11 && oUtel.value.length == 18) {
         oError.innerHTML = "账号请输入手机号或身份证号";
@@ -98,13 +134,14 @@ function fnregister() {
         isError = false;
         return;
     }
-    window.alert("登录成功")
+    window.alert("注册成功")
+    $(".loginBefore").show();
+    $(".right").hide()
+    $(".loginAfter").hide()
 }
 
 /*图片容器*/
 $(function() {
-    //$("#toright").hide();
-    //$("#toleft").hide();
     $('#toright').hover(function() {
         $("#toleft").hide()
     }, function() {
@@ -127,7 +164,6 @@ function play() {
     if (index > 4) {
         index = 0
     }
-    // console.log(index)
     $("#lunbobox ul li").eq(index).css({
         "background": "#999",
         "border": "1px solid #ffffff"
@@ -139,8 +175,7 @@ function play() {
     $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000);
 };
 
-///点击鼠标 图片切换
-$("#lunbobox ul li").click(function() {
+$("#lunbobox ul li").click(function() {//点击鼠标 图片切换
 
     //添加 移除样式
     //$(this).addClass("lito").siblings().removeClass("lito"); //给当前鼠标移动到的li增加样式 且其余兄弟元素移除样式   可以在样式中 用hover 来对li 实现
@@ -151,13 +186,11 @@ $("#lunbobox ul li").click(function() {
         "background": "#cccccc"
     })
     var index = $(this).index(); //获取索引 图片索引与按钮的索引是一一对应的
-    // console.log(index);
 
     $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000); // siblings  找到 兄弟节点(不包括自己）
 });
 
-//上一张、下一张切换
-$("#toleft").click(function() {
+$("#toleft").click(function() {//上一张、下一张切换
     index--;
     if (index <= 0) //判断index<0的情况为：开始点击#toright  index=0时  再点击 #toleft 为负数了 会出错
     {
@@ -171,8 +204,8 @@ $("#toleft").click(function() {
         "background": "#cccccc"
     })
 
-    $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000); // siblings  找到 兄弟节点(不包括自己）必须要写
-}); // $("#imgbox a ")获取到的是一个数组集合 。所以可以用index来控制切换
+    $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000); // siblings  找到 兄弟节点(不包括自己）必须要写，$("#imgbox a ")获取到的是一个数组集合 。所以可以用index来控制切换
+}); 
 
 $("#toright").click(function() {
     index++;
@@ -203,18 +236,13 @@ $("#toleft,#toright").hover(function() {
         })
     })
 
-///////鼠标移进  移出
-$("#lunbobox ul li,.lunbo a img,#toright,#toleft ").hover(
-    ////////鼠标移进
-    function() {
+$("#lunbobox ul li,.lunbo a img,#toright,#toleft ").hover(//鼠标移进  移出
+    function() {//鼠标移进
         $('#toright,#toleft').show()
         clearInterval(t);
 
     },
-    ///////鼠标移开
-    function() {
-        //$('#toright,#toleft').hide()
-        //alert('aaa')
+    function() {//鼠标移开
         t = setInterval(play, 3000)
 
         function play() {
@@ -230,7 +258,7 @@ $("#lunbobox ul li,.lunbo a img,#toright,#toleft ").hover(
             })
             $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000);
         }
-    })
+})
 
 
 /*套餐信息*/

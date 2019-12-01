@@ -14,7 +14,7 @@
         <div id="headMessage" class="lay clearfix">
             <!--左边-->
             <h1 class="fl"><a href="#">Health Examination System</a></h1>
-            <ul class="fl">
+            <ul class="fl loginAfter">
                 <li class="active">
                     <a  href="#">首页</a>
                 </li>
@@ -22,7 +22,7 @@
                     <a href="#firstScreen"><span class="iconfont">&#xe719;</span>产品</a>
                 </li>
                 <li>
-                    <a href="#">新品</a>
+                    <a href="#firstScreen">新品</a>
                 </li>
                 <li>
                     <a class="login" href="#"><span class="iconfont">&#xe63e;</span>预约</a>
@@ -30,15 +30,15 @@
             </ul>
 
             <!--右边-->
-            <ul class="fr">
+            <ul class="fr right">
                 <li>
                     <a class="login" href="#"><span class="iconfont">&#xe613;</span>登录</a>
                 </li>
                 <!--登录-->
-                <form id="login" class="box">
-                    <span class="iconfont fr">&#xe6a1;</span>
+                <form id="login" class="box" method="get" action="">
+                    <span class="iconfont close fr">&#xe6a1;</span>
                     <div class="input_box">
-                        <p class="p1">手机号/证件号</p>
+                        <p class="p1">手机号 / 证件号</p>
                         <input id="uname" type="text" name="user">
                     </div>
                     <div class="input_box">
@@ -47,9 +47,9 @@
                     </div>
                     <div id="error_box"><br></div>
                     <div class="input_box">
-                        <button type="button" class="btn btn-primary" onclick="fnLogin()">登录</button>    
-                        <a href="#">
-                            <input type="button" class="btn btn-info" name="regist" value="注册">
+                        <button type="button" class="btn btn-info primary" onclick="fnLogin()">登录</button>    
+                        <a class="register" href="#">
+                            <input type="button" class="btn btn-info info" name="register" value="注册">
                         </a>
                     </div>
                 </form>
@@ -58,8 +58,8 @@
                     <a class="register" href="#"><span class="iconfont">&#xe69a;</span>注册</a>
                 </li>
                 <!--注册-->
-                <form id="register" class="box">
-                    <span class="iconfont fr">&#xe6a1;</span>
+                <form id="register" class="box" method="get" action="">
+                    <span class="iconfont close fr">&#xe6a1;</span>
                     <div class="input_box">
                         <p class="p1">证件号</p>
                         <input id="uname" type="text" name="user">
@@ -72,14 +72,65 @@
                         <p class="p3">手机号</p>
                         <input id="utel" type="text" name="tel">
                     </div>
-                    <div id="error_box"><br></div>
+                    <div id="error_box1"><br></div>
                     <div class="input_box">  
-                        <a href="#">
-                            <input type="button" class="btn btn-info" name="register" value="注册">
+                        <a href="#" onclick="fnregister()">
+                            <input type="button" class="btn btn-info" name="register"  value="注册">
                         </a>
                     </div>
                 </form>
+            </ul>
 
+            <!--登录后-->
+            <ul class="fr loginBefore">
+                <li class="active">
+                    <a  href="#">首页</a>
+                </li>
+                <li>
+                    <a href="#firstScreen"><span class="iconfont">&#xe719;</span>产品</a>
+                </li>
+                <li>
+                    <a href="#firstScreen">新品</a>
+                </li>
+                <li>
+                    <a class="appointment" href="#"><span class="iconfont">&#xe63e;</span>预约</a>
+                </li>
+
+                <!--预约-->
+                <form id="appointment" class="box">
+                    <span class="iconfont close fr">&#xe6a1;</span>
+                    <div class="input_box1">
+                        <span class="p1">性别:</span>
+                        <label><span class="iconfont c1 f1">&#xe603;男</span><input class="usex" type="radio" checked ="checked" name="usex"></label>
+                        <label><span class="iconfont c2 f1">&#xe604;女</span><input class="usex" type="radio" name="usex"></label>
+                    </div>
+                    <div class="input_box2">
+                        <span class="p2">年龄:</span>
+                        <input id="uage" type="text" name="uage">
+                    </div>
+                    <div class="input_box3">
+                        <span class="p3 fl">套餐类型:</span>
+                        <select name="province">
+                            <option>套餐一</option>
+                            <option>套餐二</option>
+                            <option>套餐三</option>
+                            <option>套餐四</option>
+                            <option>套餐五</option>
+                        </select>
+                    </div>
+                    <div class="input_box4">
+                        <span class="p4">预约时间:</span>
+                        <input id="utime" type="text" name="utime">
+                    </div>
+                    <div id="error_box"><br></div>
+                    <div class="input_box">
+                        <button type="button" class="btn btn-info" onclick="fnAppointment()">确定</button>    
+                    </div>
+                </form>
+
+                <li class="my">
+                    <a href="#">我的</a>
+                </li>
             </ul>
         </div>
 
