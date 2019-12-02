@@ -34,52 +34,52 @@
                 <li>
                     <a class="login" href="#"><span class="iconfont">&#xe613;</span>登录</a>
                 </li>
-                <!--登录-->
-                <form id="login" class="box" method="get" action="">
-                    <span class="iconfont close fr">&#xe6a1;</span>
-                    <div class="input_box">
-                        <p class="p1">手机号 / 证件号</p>
-                        <input id="uname" type="text" name="user">
-                    </div>
-                    <div class="input_box">
-                        <p class="p2">密码</p>
-                        <input id="upass" type="password" name="psw">
-                    </div>
-                    <div id="error_box"><br></div>
-                    <div class="input_box">
-                        <button type="button" class="btn btn-info primary" onclick="fnLogin()">登录</button>    
-                        <a class="register" href="#">
-                            <input type="button" class="btn btn-info info" name="register" value="注册">
-                        </a>
-                    </div>
-                </form>
-
                 <li>
                     <a class="register" href="#"><span class="iconfont">&#xe69a;</span>注册</a>
                 </li>
-                <!--注册-->
-                <form id="register" class="box" method="get" action="">
-                    <span class="iconfont close fr">&#xe6a1;</span>
-                    <div class="input_box">
-                        <p class="p1">证件号</p>
-                        <input id="uname" type="text" name="user">
-                    </div>
-                    <div class="input_box">
-                        <p class="p2">密码</p>
-                        <input id="upass" type="password" name="psw">
-                    </div>
-                    <div class="input_box">
-                        <p class="p3">手机号</p>
-                        <input id="utel" type="text" name="tel">
-                    </div>
-                    <div id="error_box1"><br></div>
-                    <div class="input_box">  
-                        <a href="#" onclick="fnregister()">
-                            <input type="button" class="btn btn-info" name="register"  value="注册">
-                        </a>
-                    </div>
-                </form>
             </ul>
+            <!--登录-->
+            <form id="login" class="box" method="get" action="">
+                <span class="iconfont close fr">&#xe6a1;</span>
+                <div class="input_box">
+                    <p class="p1">手机号 / 证件号</p>
+                    <input id="uname" type="text" name="user">
+                </div>
+                <div class="input_box">
+                    <p class="p2">密码</p>
+                    <input id="upass" type="password" name="psw">
+                </div>
+                <div id="error_box"><br></div>
+                <div class="input_box">
+                    <button type="button" class="btn btn-info primary" onclick="fnLogin()">登录</button>    
+                    <a class="register" href="#">
+                        <input type="button" class="btn btn-info info" name="register" value="注册">
+                    </a>
+                </div>
+            </form>
+
+            <!--注册-->
+            <form id="register" class="box" method="get" action="">
+                <span class="iconfont close fr">&#xe6a1;</span>
+                <div class="input_box">
+                    <p class="p1">证件号</p>
+                    <input id="uname" type="text" name="user">
+                </div>
+                <div class="input_box">
+                    <p class="p2">密码</p>
+                    <input id="upass" type="password" name="psw">
+                </div>
+                <div class="input_box">
+                    <p class="p3">手机号</p>
+                    <input id="utel" type="text" name="tel">
+                </div>
+                <div id="error_box1"><br></div>
+                <div class="input_box">  
+                    <a href="#" onclick="fnregister()">
+                        <input type="button" class="btn btn-info" name="register"  value="注册">
+                    </a>
+                </div>
+            </form>
 
             <!--登录后-->
             <ul class="fr loginBefore">
@@ -95,44 +95,88 @@
                 <li>
                     <a class="appointment" href="#"><span class="iconfont">&#xe63e;</span>预约</a>
                 </li>
-
-                <!--预约-->
-                <form id="appointment" class="box">
-                    <span class="iconfont close fr">&#xe6a1;</span>
-                    <div class="input_box1">
-                        <span class="p1">性别:</span>
-                        <label><span class="iconfont c1 f1">&#xe603;男</span><input class="usex" type="radio" checked ="checked" name="usex"></label>
-                        <label><span class="iconfont c2 f1">&#xe604;女</span><input class="usex" type="radio" name="usex"></label>
-                    </div>
-                    <div class="input_box2">
-                        <span class="p2">年龄:</span>
-                        <input id="uage" type="text" name="uage">
-                    </div>
-                    <div class="input_box3">
-                        <span class="p3 fl">套餐类型:</span>
-                        <select name="province">
-                            <option>套餐一</option>
-                            <option>套餐二</option>
-                            <option>套餐三</option>
-                            <option>套餐四</option>
-                            <option>套餐五</option>
-                        </select>
-                    </div>
-                    <div class="input_box4">
-                        <span class="p4">预约时间:</span>
-                        <input id="utime" type="text" name="utime">
-                    </div>
-                    <div id="error_box"><br></div>
-                    <div class="input_box">
-                        <button type="button" class="btn btn-info" onclick="fnAppointment()">确定</button>    
-                    </div>
-                </form>
-
                 <li class="my">
                     <a href="#">我的</a>
                 </li>
             </ul>
+
+            <!--预约-->
+            <form id="appointment" class="box" method="get" action="">
+                <span class="iconfont close fr">&#xe6a1;</span>
+                <div class="input_box1">
+                    <span class="p1">性别:</span>
+                    <label><span class="iconfont c1 f1">&#xe603;男</span><input class="usex" type="radio" checked ="checked" name="usex"></label>
+                    <label><span class="iconfont c2 f1">&#xe604;女</span><input class="usex" type="radio" name="usex"></label>
+                </div>
+                <div class="input_box2">
+                    <span class="p2">年龄:</span>
+                    <input id="uage" type="text" name="uage">
+                </div>
+                <div class="input_box3">
+                    <span class="p3 fl">套餐类型:</span>
+                    <select name="province">
+                        <option>套餐一</option>
+                        <option>套餐二</option>
+                        <option>套餐三</option>
+                        <option>套餐四</option>
+                        <option>套餐五</option>
+                    </select>
+                </div>
+                <div class="input_box4">
+                    <span class="p4">预约时间:</span>
+                    <input id="utime" type="text" name="utime">
+                </div>
+                <div id="error_box"><br></div>
+                <div class="input_box">
+                    <button type="button" class="btn btn-info" onclick="fnAppointment()">确定</button>    
+                </div>
+            </form>
+
         </div>
+        <!--我的-->
+        <form id="my" method="get" action="">
+            <div class="searchContent clearfix">
+                <div class="searchBox fl">
+                    <input type="text" id="txt" value="" />
+                    <i class="iconfont ico">&#xe501;</i>
+                </div>
+                <div class="btn fl">
+                    <button id="btn" type="submit">搜索</button>
+                </div>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>时间</th>
+                        <th class="set">套餐</th>
+                        <th>预约状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2015-10-1</td>
+                        <td>套餐一</td>
+                        <td>预约成功</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-1</td>
+                        <td>套餐一</td>
+                        <td>预约成功</td>
+                    </tr>
+                    <tr>
+                        <td>2017-10-1</td>
+                        <td>套餐一</td>
+                        <td>预约成功</td>
+                    </tr>
+                    <tr>
+                        <td>2018-10-1</td>
+                        <td>套餐一</td>
+                        <td>预约成功</td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
 
         <!--轮播图-->
         <div id="myCarousel" class="carousel slide">

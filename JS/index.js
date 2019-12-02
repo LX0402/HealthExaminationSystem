@@ -1,5 +1,6 @@
 /*导航栏*/
 $(".loginBefore").hide()
+$("#my").hide();
 
 /*轮播图*/
 $("#myCarousel").carousel('cycle');
@@ -20,6 +21,8 @@ setInterval(async function() {
         area.scrollTop(0);
     }
 }, delay);
+
+/*-------------------------------------------------*/
 
 /*预约*/
 $("#appointment").hide()
@@ -53,7 +56,10 @@ function fnAppointment() {
         return;
     }
     window.alert("预约成功")
+    $("#appointment").hide()
 }
+
+/*-------------------------------------------------*/
 
 /*登录*/
 $("#login").hide()
@@ -92,11 +98,13 @@ function fnLogin() {
         isError = false;
         return;
     }
-    window.alert("登录成功")
+    $("#login").hide()
     $(".loginBefore").show();
     $(".right").hide()
     $(".loginAfter").hide()
 }
+
+/*-------------------------------------------------*/
 
 /*注册*/
 $("#register").hide()
@@ -134,11 +142,13 @@ function fnregister() {
         isError = false;
         return;
     }
-    window.alert("注册成功")
+    $("#register").hide()
     $(".loginBefore").show();
     $(".right").hide()
     $(".loginAfter").hide()
 }
+
+/*-------------------------------------------------*/
 
 /*图片容器*/
 $(function() {
@@ -260,6 +270,7 @@ $("#lunbobox ul li,.lunbo a img,#toright,#toleft ").hover(//鼠标移进  移出
         }
 })
 
+/*-------------------------------------------------*/
 
 /*套餐信息*/
 $(".newOne").hide()
@@ -297,4 +308,53 @@ $(".comboFive").mouseover(function (){
     $(".newFive").show();
 }).mouseout(function (){
     $(".newFive").hide();
+});
+
+$(".newOne").mouseover(function (){
+    $(".newOne").show();
+}).mouseout(function (){
+    $(".newOne").hide();
+});
+$(".newTwo").mouseover(function (){
+    $(".newTwo").show();
+}).mouseout(function (){
+    $(".newTwo").hide();
+});
+$(".newThird").mouseover(function (){
+    $(".newThird").show();
+}).mouseout(function (){
+    $(".newThird").hide();
+});
+$(".newFour").mouseover(function (){
+    $(".newFour").show();
+}).mouseout(function (){
+    $(".newFour").hide();
+});
+$(".newFive").mouseover(function (){
+    $(".newFive").show();
+}).mouseout(function (){
+    $(".newFive").hide();
+});
+
+/*-------------------------------------------------*/
+
+/*我的*/
+$(function () {
+    $("#btn").click(function () {
+        var $sea=$('#txt').val();
+        //先隐藏全部，再把符合筛选条件的值显示
+        $('table tbody tr').hide().filter(':contains('+$sea+')').show();
+    });
+});
+$(document).ready(function(){
+    $(".my").click(function(){
+        $("#my").show();
+        $("#myCarousel").hide()
+        $("#firstScreen").hide()
+        $("#introduce").hide()
+        $("#contact").hide()
+    });
+    $("#txt").click(function(){
+        $(".ico").hide()
+    });
 });

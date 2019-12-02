@@ -39,38 +39,41 @@ body{
     font-weight: bolder;
 }
 
+/*-------------------------------------------------*/
+
 /*登录*/
-#login{
+#login,#register,#appointment{
     height: 365px;
+    width: 500px;
     position: absolute;
-    left: 50%;
     transform: translate(-50%,0);/*水平居中*/
-    width: 100%;
-    background: url(../images/timg.gif) center no-repeat;
+    left: 50%;
+    background: url(../images/timg.gif) center center no-repeat;
+    border-radius: 50px;
     z-index: 2001;
-    top: 100px;
+    top: 140px;
 }
-#login .close{
-    margin: 1% 33%;
+#login .close,#register .close,#appointment .close{
+    margin: 5% 5%;
     cursor:pointer;
-    color: #fc84e8;
+    color: #052DDD;
 }
-#login .input_box .p1,#login .input_box .p2{
+#login .input_box .p1,#login .input_box .p2,#register .input_box .p1,#register .input_box .p2,#register .input_box .p3{
     font-weight: bolder;
     color: #fc84e8;
 }
 #login .input_box .p1{
-    padding: 50px 628px 5px;
+    padding: 50px 204px 5px;
 }
-#login .input_box .p2{
-    padding: 30px 661px 5px;
+#login .input_box .p2,#register .input_box .p2{
+    padding: 25px 237px 5px;
 }
-#login .input_box #uname,#login .input_box #upass{
+#login .input_box #uname,#login .input_box #upass,#register .input_box #uname,#register .input_box #upass,#register .input_box #utel{
     width: 250px;
     height: 35px;
     outline: none;
     border-radius: 20px 20px 20px 20px;
-    margin: 0 552px 5px;
+    margin: 0 125px 0;
 }
 #login .input_box .btn{
     width: 85px;
@@ -82,51 +85,27 @@ body{
 }
 #login #error_box{
     color: #fc0107;
-    margin: 25px 64px 5px 556px;
+    margin: 25px 64px 5px 187px;
 }
 #login .input_box .primary{
-    margin: 0 64px 5px 556px;
+    margin: 10px 64px 5px 134px;
 }
 #login .input_box .info{
-    margin:-3px 0 0 0;
+    margin:5px 0 0 0;
 }
 
+/*-------------------------------------------------*/
+
 /*注册*/
-#register{
-    height: 365px;
-    position: absolute;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%,0);/*水平居中*/
-    background: url(../images/timg.gif) center no-repeat;
-    z-index: 2001;
-    top: 100px;
-}
 #register #error_box1{
     color: #fc0107;
-    margin: 0 64px 5px 556px;
+    margin: 17px 64px 5px 190px;
 }
-#register .close{
-    margin: 1% 33%;
-    cursor:pointer;
-    color: #fc84e8;
+#register .input_box .p1{
+    padding: 42px 230px 5px;
 }
-#register .input_box .p1,#register .input_box .p2,#register .input_box .p3{
-    font-weight: bolder;
-    color: #fc84e8;
-}
-#register .input_box .p1,#register .input_box .p3{
-    padding: 15px 654px 5px;
-}
-#register .input_box .p2{
-    padding: 15px 660px 5px;
-}
-#register .input_box #uname,#register .input_box #upass,#register .input_box #utel{
-    width: 250px;
-    height: 35px;
-    outline: none;
-    border-radius: 20px 20px 20px 20px;
-    margin: 0 551px 5px;
+#register .input_box .p3{
+    padding: 25px 230px 5px;
 }
 #register .input_box .btn{
     width: 115px;
@@ -136,32 +115,27 @@ body{
     border-radius: 20px 20px 20px 20px;
     outline: none;
     border: none;
-    margin: 10px 0 0 616px;
+    margin: 0 0 0 194px;
 }
 
 /*轮播图*/
+#myCarousel{
+    width: 1349px;
+    overflow: hidden;
+}
 #myCarousel span{
     opacity: 0.3;
 }
 
+/*-------------------------------------------------*/
+
 /*预约*/
-#appointment{
-    height: 365px;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%,0);/*水平居中*/
-    width: 100%;
-    background: url(../images/timg.gif) center no-repeat;
-    z-index: 2001;
-    top: 100px;
-}
-#appointment .close{
-    margin: 1% 33%;
-    cursor:pointer;
-    color: #fc84e8;
+#appointment #error_box1{
+    color: #fc0107;
+    margin: 17px 64px 5px 190px;
 }
 #appointment .input_box1{
-    margin: 38px 0 25px 600px;
+    margin: 38px 0 25px 164px;
     color: #fc84e8;
     font-weight: bolder;
 }
@@ -180,7 +154,7 @@ body{
     height: 35px;
     width: 100px;
     box-sizing: border-box;
-    margin: 12px 0 25px 609px;
+    margin: 12px 0 25px 177px;
 }
 #appointment .input_box2 #uage{
     margin: -2px 30px;
@@ -191,7 +165,7 @@ body{
 #appointment .input_box3,#appointment .input_box4{
     height: 35px;
     box-sizing: border-box;
-    margin: 12px 0 25px 600px;
+    margin: 5px 0 25px 166px;
 }
 #appointment .input_box2 #uage,#appointment .input_box3 select,#appointment .input_box4 #utime{
     position: absolute;
@@ -218,9 +192,88 @@ body{
     border-radius: 20px 20px 20px 20px;
     outline: none;
     border: none;
-    margin: 0 632px;
+    margin: 0px 208px;
 }
 
+/*-------------------------------------------------*/
+
+/*我的*/
+#my{
+    width: 1349px;
+    height: 500px;
+    position: relative;
+    transform: translate(-50%,0);/*水平居中*/
+    left: 50%;
+}
+#my .searchContent{
+    height: 40px;
+    margin: 23px 359px;
+}
+#my .searchBox{
+    width: 554px;
+    height: 38px;
+    box-sizing: border-box;
+    border: 2px solid #c4abf8da;
+    border-right: none;
+    border-radius: 20px 0 0 20px;
+    overflow: hidden;
+    position: relative;
+}
+#my .searchBox input{
+    width: 490px;
+    height: 36px;
+    line-height: 36px;
+    outline: none;
+    border: none;
+    text-indent: 10px;
+    position: absolute;
+    z-index: 2;
+    background-color: transparent;
+}
+#my .searchBox i{
+    position: absolute;
+    top: 6px;
+    left: 14px;
+    font-size: 20px;
+    line-height: 25px;
+    color: #9c9c9c;
+}
+#my .btn{
+    padding: 0;
+    margin: -1px 0 0 -2px;
+}
+#my .searchContent button{
+    width: 74px;
+    height: 38px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+    color: #fff;
+    border: none;
+    background-image: linear-gradient(to right,#c4abf8da 0,#8eddfad8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c4abf8da', endColorstr='#8eddfad8', GradientType=1);
+    border-radius: 0 20px 20px 0;
+}
+#my .searchContent #btn:hover{
+    color: #000;
+}
+#my table{
+    width: 1030px;
+    border: 2px solid #8eddfa;
+    margin: 0 auto;
+    border-collapse: collapse;/*边框合并*/
+}
+#my table .set{
+    width: 470px;
+}
+#my tr{
+    height: 30px;
+    text-align: center;
+}
+#my th,td{
+    text-align: center;
+    border: 2px solid #8eddfa;
+}
 
 /*产品*/
 #firstScreen{
@@ -279,6 +332,7 @@ body{
 #firstScreen #middle_right{
     width:1015px;
     height:550px;
+    border: 1px solid #8eddfad8;
     position:relative;
     left: 250px;
 }
