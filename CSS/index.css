@@ -1,0 +1,488 @@
+@import 'reset.css';
+
+body{
+    background: url(../images/bg2.jpg) center no-repeat;
+    background-size: 100% 100%;
+}
+/*头部信息*/
+#headMessage h1{
+    padding: 15px 0px 10px;
+}
+#headMessage h1 a{
+    display: block;
+    width: 200px;
+    height: 50px;
+    background: url(../images/logo.png) center no-repeat;
+    /*首行缩进*/
+    text-indent: -999px;
+    overflow: hidden;
+}
+#headMessage li{
+    float: left;
+    line-height: 75px;
+    padding: 0 6px;
+    font-size: 0px;
+}
+#headMessage li a{
+    color: #000;
+    font-size: 20px;
+    padding: 6px 15px;
+    text-decoration: none;
+}
+#headMessage li a:hover{
+    color: #fff;
+    background-image: linear-gradient(to right,#c4abf8da 0,#8eddfad8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c4abf8da', endColorstr='#8eddfad8', GradientType=1);
+    border-radius: 20px 20px 20px 20px;
+}
+#headMessage li a span{
+    font-weight: bolder;
+}
+
+/*-------------------------------------------------*/
+
+/*登录*/
+#login,#register,#appointment{
+    height: 365px;
+    width: 500px;
+    position: absolute;
+    transform: translate(-50%,0);/*水平居中*/
+    left: 50%;
+    background: url(../images/timg.gif) center center no-repeat;
+    border-radius: 50px;
+    z-index: 2001;
+    top: 140px;
+}
+#login .close,#register .close,#appointment .close{
+    margin: 5% 5%;
+    cursor:pointer;
+    color: #052DDD;
+}
+#login .input_box .p1,#login .input_box .p2,#register .input_box .p2,#register .input_box .p3{
+    font-weight: bolder;
+    color: #fc84e8;
+}
+#login .input_box .p1{
+    padding: 50px 204px 5px;
+}
+#login .input_box .p2,#register .input_box .p2{
+    padding: 25px 237px 5px;
+}
+#login .input_box #name,#login .input_box #pass,#register .input_box #pass1,#register .input_box #tel{
+    width: 250px;
+    height: 35px;
+    outline: none;
+    border-radius: 20px 20px 20px 20px;
+    margin: 0 125px 0;
+}
+#login .input_box .btn{
+    width: 85px;
+    height: 35px;
+    color: #fff;
+    border-radius: 20px 20px 20px 20px;
+    outline: none;
+    border: none;
+}
+#login #error_box{
+    color: #fc0107;
+    margin: 25px 64px 5px 187px;
+}
+#login .input_box .primary{
+    margin: 10px 64px 5px 134px;
+}
+#login .input_box .info{
+    margin:5px 0 0 0;
+}
+
+/*-------------------------------------------------*/
+
+/*注册*/
+#register #error_box1{
+    color: #fc0107;
+    margin: 17px 64px 5px 190px;
+}
+#register .input_box1{
+    margin: 54px 0 0 164px;
+    color: #fc84e8;
+    font-weight: bolder;
+}
+#register .input_box1 .usex{
+    vertical-align: middle;
+    width: 40px;
+    height: 33px;
+}
+#register .input_box .p3{
+    padding: 25px 230px 5px;
+}
+#register .input_box .btn{
+    width: 115px;
+    height: 35px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 20px 20px 20px 20px;
+    outline: none;
+    border: none;
+    margin: 0 0 0 194px;
+}
+
+/*轮播图*/
+#myCarousel{
+    width: 1349px;
+    overflow: hidden;
+}
+#myCarousel span{
+    opacity: 0.3;
+}
+
+/*-------------------------------------------------*/
+
+/*预约*/
+#appointment #error_box1{
+    color: #fc0107;
+    margin: 17px 64px 5px 190px;
+}
+#appointment .input_box2 .p2,#appointment .input_box3 .p3,#appointment .input-group .p4{
+    line-height: 33px;
+    font-weight: bolder;
+    margin-right: 5px;
+    color: #fc84e8;
+}
+#appointment .input_box2{
+    height: 35px;
+    width: 100px;
+    box-sizing: border-box;
+    margin: 69px 0 25px 177px;
+}
+#appointment .input_box2 #age{
+    margin: -2px 30px;
+}
+#appointment .input_box3{
+    width: 154px;
+}
+#appointment .input_box3,#appointment .input-group{
+    height: 35px;
+    box-sizing: border-box;
+    margin: 5px 0 25px 166px;
+}
+#appointment .input_box2 #age,#appointment .input_box3 select,#appointment .input-group #startTime{
+    position: absolute;
+    height: 35px;
+    width: 90px;
+    outline: none;
+    border: 2px solid #48b7d9;
+    border-radius: 20px 20px 20px 20px;
+}
+#appointment .input_box3 select{
+    color: #4b4848;
+    margin: -2px 13px;
+}
+#appointment .input-group{
+    width: 213px;
+}
+#appointment .input-group #startTime{
+    width: 150px;
+    margin: -32px 42px;
+}
+#appointment .input_box .btn{
+    width: 85px;
+    height: 35px;
+    color: #fff;
+    border-radius: 20px 20px 20px 20px;
+    outline: none;
+    border: none;
+    margin: 0px 208px;
+}
+
+/*-------------------------------------------------*/
+
+/*我的*/
+#my{
+    width: 1349px;
+    height: 500px;
+    position: relative;
+    transform: translate(-50%,0);/*水平居中*/
+    left: 50%;
+}
+#my .searchContent{
+    height: 40px;
+    margin: 23px 359px;
+}
+#my .searchBox{
+    width: 554px;
+    height: 38px;
+    box-sizing: border-box;
+    border: 2px solid #c4abf8da;
+    border-right: none;
+    border-radius: 20px 0 0 20px;
+    overflow: hidden;
+    position: relative;
+}
+#my .searchBox input{
+    width: 490px;
+    height: 36px;
+    line-height: 36px;
+    outline: none;
+    border: none;
+    text-indent: 10px;
+    position: absolute;
+    z-index: 2;
+    background-color: transparent;
+}
+#my .searchBox i{
+    position: absolute;
+    top: 6px;
+    left: 14px;
+    font-size: 20px;
+    line-height: 25px;
+    color: #9c9c9c;
+}
+#my .btn{
+    padding: 0;
+    margin: -1px 0 0 -2px;
+}
+#my .searchContent button{
+    width: 74px;
+    height: 38px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+    color: #fff;
+    border: none;
+    background-image: linear-gradient(to right,#c4abf8da 0,#8eddfad8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c4abf8da', endColorstr='#8eddfad8', GradientType=1);
+    border-radius: 0 20px 20px 0;
+}
+#my .searchContent #btn:hover{
+    color: #000;
+}
+#my table{
+    width: 1030px;
+    border: 2px solid #8eddfa;
+    margin: 0 auto;
+    border-collapse: collapse;/*边框合并*/
+}
+#my table .set{
+    width: 470px;
+}
+#my tr{
+    height: 30px;
+    text-align: center;
+}
+#my th,td{
+    text-align: center;
+    border: 2px solid #8eddfa;
+}
+
+/*产品*/
+#firstScreen{
+    width: 1265px;
+}
+#firstScreen .title img{
+    margin:50px 553px 20px;
+    width: 155px;
+    height: 95px;
+}
+/*左边内容*/
+#firstScreen {
+    width: 1265x;
+    z-index: 10;
+}
+/*侧边导航*/
+#firstScreen  .sideNav{
+    width: 250px;
+    height: 551px;
+    border: 1px solid #8eddfad8;
+    box-sizing: border-box;
+}
+ .sideNav li{
+    height: 110px;
+    line-height: 110px;
+    padding-left: 17px;
+    color: #999;
+    font-size: 14px;
+    /*过度背景色*/
+    transition: background-color 0.3s;
+    overflow: hidden;
+    white-space: nowrap;
+}
+ .sideNav li a{
+    font-size: 15px;
+    font-weight: bold;
+    color: #666;
+}
+ .sideNav li span{
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+ .sideNav li:hover{
+    background: #d5e7f3;
+    color: #e1c68b;
+}
+ .sideNav li:hover a{
+    color: #e1c68b;
+}
+ .sideNav a:hover{
+    text-decoration: underline;
+}
+
+/*图片1容器*/
+#firstScreen #middle_right{
+    width:1015px;
+    height:550px;
+    border: 1px solid #8eddfad8;
+    position:relative;
+    left: 250px;
+}
+#firstScreen #lunbobox {
+	width:1012px;
+	height:550px;
+    position:absolute;
+    top:0px;
+    z-index: 10;
+}
+#firstScreen .lunbo {
+	width:1012px;
+    height:550px;
+    overflow: hidden;
+}
+#firstScreen .lunbo img {
+	width:1012px;
+	height:550px;
+    position:absolute;
+    
+}
+#firstScreen #lunbobox ul {
+	width:285px;
+	position:absolute;
+	bottom:25px;
+	right:0px;
+    left:440px;
+}
+#firstScreen #lunbobox ul li {
+	cursor:pointer;
+	width:25px;
+	height:5px;
+	border:1px solid #cccccc;
+	float:left;
+	list-style:none;
+	background:#cccccc;
+	text-align:center;
+	margin:0px 5px 0px 0px;
+}
+#firstScreen #toleft {
+	display:none;
+	width:30px;
+	height:100px;
+	font-size:40px;
+	line-height:100px;
+	text-align:center;
+	color:#f4f4f4;
+    left:0px;
+    position:absolute;
+	top:205px;
+	left:35px;
+	cursor:pointer;
+	z-index:99;
+	opacity:0.4;
+}
+#firstScreen #toright {
+	display:none;
+	width:30px;
+	height:100px;
+	font-size:40px;
+	line-height:100px;
+	text-align:center;
+	color:#f4f4f4;
+    left:945px;
+    position:absolute;
+	top:205px;
+	right:0px;
+	cursor:pointer;
+	z-index:99;
+	opacity:0.4;
+}
+
+/*套餐信息*/
+#firstScreen .news{
+    width:1012px;
+    height:550px;
+    left: 249px;
+    position: relative;
+    margin-top: -549px;
+}
+#firstScreen .news .newOne,#firstScreen .news .newTwo,#firstScreen .news .newThird,#firstScreen .news .newFour,#firstScreen .news .newFive{
+    width:1012px;
+    height:550px;
+    z-index: 6000;
+    position: absolute;
+}
+#firstScreen .news .newOne{
+    background-color: #000;
+}
+#firstScreen .news .newTwo{
+    background-color: rgb(16, 223, 85);
+}
+#firstScreen .news .newThird{
+    background-color: rgb(250, 6, 6);
+}
+#firstScreen .news .newFour{
+    background-color: rgb(7, 132, 204);
+}
+#firstScreen .news .newFive{
+    background-color: rgb(247, 21, 153);
+}
+
+/*介绍*/
+#introduce{
+    width: 1000px;
+    margin: 50px auto;
+    text-align: center;
+}
+#introduce .title img{
+    margin:50px 423px 20px;
+    width: 155px;
+    height: 95px;
+}
+#introduce p{
+    font-size: 16px;
+    margin: 5px 0 0;
+}
+
+/*联系我们*/
+#contact{
+    height: 200px;
+}
+#contact h3{
+    margin: 59px 0 0 150px;
+}
+#contact h3 img{
+    height: 100px;
+    font-size: 0;
+    font-weight: normal;
+}
+#contact h3 i{
+    color: #000;
+    vertical-align: middle;
+    font-size: 23px;
+    margin: 0 0 0 50px;
+}
+#contact h3 i span{
+    font-size: 23px;
+}
+#contact h3 p{
+    color: #2f3030;
+    font-size: 15px;
+    margin: 5px 0 0 150px;
+}
+#contact .p1{
+    height: 100px;
+    margin: 50px 100px 0 0;
+}
+#contact .p2{
+    height: 100px;
+    margin: 50px 20px 0 0;
+}
+
+
+/**/
