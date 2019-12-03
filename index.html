@@ -27,6 +27,9 @@
                 <li>
                     <a class="login" href="#"><span class="iconfont">&#xe63e;</span>预约</a>
                 </li>
+                <li>
+                    <a class="forget" href="#">忘记密码</a>
+                </li>
             </ul>
 
             <!--右边-->
@@ -43,11 +46,11 @@
                 <span class="iconfont close fr">&#xe6a1;</span>
                 <div class="input_box">
                     <p class="p1">手机号 / 证件号</p>
-                    <input id="uname" type="text" name="user">
+                    <input id="name" type="text" name="user">
                 </div>
                 <div class="input_box">
                     <p class="p2">密码</p>
-                    <input id="upass" type="password" name="psw">
+                    <input id="pass" type="password" name="psw">
                 </div>
                 <div id="error_box"><br></div>
                 <div class="input_box">
@@ -61,17 +64,18 @@
             <!--注册-->
             <form id="register" class="box" method="get" action="">
                 <span class="iconfont close fr">&#xe6a1;</span>
-                <div class="input_box">
-                    <p class="p1">证件号</p>
-                    <input id="uname" type="text" name="user">
-                </div>
-                <div class="input_box">
-                    <p class="p2">密码</p>
-                    <input id="upass" type="password" name="psw">
+                <div class="input_box1">
+                    <span class="p1">性别:</span>
+                    <label><span class="iconfont c1 f1">&#xe603;男</span><input id="sex1" class="usex" type="radio" checked ="checked" name="Male"></label>
+                    <label><span class="iconfont c2 f1">&#xe604;女</span><input id="sex2" class="usex" type="radio" name="FeMale"></label>
                 </div>
                 <div class="input_box">
                     <p class="p3">手机号</p>
-                    <input id="utel" type="text" name="tel">
+                    <input id="tel" type="text" name="tel">
+                </div>
+                <div class="input_box">
+                    <p class="p2">密码</p>
+                    <input id="pass1" type="password" name="psw">
                 </div>
                 <div id="error_box1"><br></div>
                 <div class="input_box">  
@@ -80,6 +84,8 @@
                     </a>
                 </div>
             </form>
+
+            <!--忘记密码-->
 
             <!--登录后-->
             <ul class="fr loginBefore">
@@ -103,14 +109,9 @@
             <!--预约-->
             <form id="appointment" class="box" method="get" action="">
                 <span class="iconfont close fr">&#xe6a1;</span>
-                <div class="input_box1">
-                    <span class="p1">性别:</span>
-                    <label><span class="iconfont c1 f1">&#xe603;男</span><input class="usex" type="radio" checked ="checked" name="usex"></label>
-                    <label><span class="iconfont c2 f1">&#xe604;女</span><input class="usex" type="radio" name="usex"></label>
-                </div>
                 <div class="input_box2">
                     <span class="p2">年龄:</span>
-                    <input id="uage" type="text" name="uage">
+                    <input id="age" type="text" name="uage">
                 </div>
                 <div class="input_box3">
                     <span class="p3 fl">套餐类型:</span>
@@ -122,9 +123,9 @@
                         <option>套餐五</option>
                     </select>
                 </div>
-                <div class="input_box4">
-                    <span class="p4">预约时间:</span>
-                    <input id="utime" type="text" name="utime">
+                <div class="input-group">
+                    <span class="p4">时间：</span>
+                    <input name="startTime" id="startTime" class="form-control"  type="text"  datepicker="date">
                 </div>
                 <div id="error_box"><br></div>
                 <div class="input_box">
@@ -297,10 +298,12 @@
         </div>
 
         <script src="../HealthExaminationSystem/lib/jquery/jquery-3.4.1.min.js"></script>
-        <script src="../HealthExaminationSystem/lib/bootstrap-3.4.1-dist/js/bootstrap.min.js">
-        </script>
-        
+        <script src="../HealthExaminationSystem/lib/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="../HealthExaminationSystem/JS/index.js"></script>
+        <script type="text/javascript" src="../HealthExaminationSystem/JS/util.js"></script>
+        <script src="../HealthExaminationSystem/lib/bootstrap-3.4.1-dist/js/moment.js"></script>
+        <script src="../HealthExaminationSystem/lib/bootstrap-3.4.1-dist/js/zh-cn.js"></script>
+        <script src="../HealthExaminationSystem/lib/bootstrap-3.4.1-dist/js/bootstrap-datetimepicker.js"></script>
 
     </body>
 </html>
