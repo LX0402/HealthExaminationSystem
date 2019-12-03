@@ -1,4 +1,3 @@
-
 /*导航栏*/
 $(".loginBefore").hide()
 $("#my").hide();
@@ -354,7 +353,6 @@ $(document).ready(function(){
         $("#firstScreen").hide()
         $("#introduce").hide()
         $("#contact").hide()
-        
     });
     $("#txt").click(function(){
         $(".ico").hide()
