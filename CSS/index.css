@@ -58,7 +58,7 @@ body{
     cursor:pointer;
     color: #052DDD;
 }
-#login .input_box .p1,#login .input_box .p2,#register .input_box .p1,#register .input_box .p2,#register .input_box .p3{
+#login .input_box .p1,#login .input_box .p2,#register .input_box .p2,#register .input_box .p3{
     font-weight: bolder;
     color: #fc84e8;
 }
@@ -68,7 +68,7 @@ body{
 #login .input_box .p2,#register .input_box .p2{
     padding: 25px 237px 5px;
 }
-#login .input_box #uname,#login .input_box #upass,#register .input_box #uname,#register .input_box #upass,#register .input_box #utel{
+#login .input_box #name,#login .input_box #pass,#register .input_box #pass1,#register .input_box #tel{
     width: 250px;
     height: 35px;
     outline: none;
@@ -101,8 +101,15 @@ body{
     color: #fc0107;
     margin: 17px 64px 5px 190px;
 }
-#register .input_box .p1{
-    padding: 42px 230px 5px;
+#register .input_box1{
+    margin: 54px 0 0 164px;
+    color: #fc84e8;
+    font-weight: bolder;
+}
+#register .input_box1 .usex{
+    vertical-align: middle;
+    width: 40px;
+    height: 33px;
 }
 #register .input_box .p3{
     padding: 25px 230px 5px;
@@ -134,17 +141,7 @@ body{
     color: #fc0107;
     margin: 17px 64px 5px 190px;
 }
-#appointment .input_box1{
-    margin: 38px 0 25px 164px;
-    color: #fc84e8;
-    font-weight: bolder;
-}
-#appointment .input_box1 .usex{
-    vertical-align: middle;
-    width: 40px;
-    height: 33px;
-}
-#appointment .input_box2 .p2,#appointment .input_box3 .p3,#appointment .input_box4 .p4{
+#appointment .input_box2 .p2,#appointment .input_box3 .p3,#appointment .input-group .p4{
     line-height: 33px;
     font-weight: bolder;
     margin-right: 5px;
@@ -154,20 +151,20 @@ body{
     height: 35px;
     width: 100px;
     box-sizing: border-box;
-    margin: 12px 0 25px 177px;
+    margin: 69px 0 25px 177px;
 }
-#appointment .input_box2 #uage{
+#appointment .input_box2 #age{
     margin: -2px 30px;
 }
 #appointment .input_box3{
     width: 154px;
 }
-#appointment .input_box3,#appointment .input_box4{
+#appointment .input_box3,#appointment .input-group{
     height: 35px;
     box-sizing: border-box;
     margin: 5px 0 25px 166px;
 }
-#appointment .input_box2 #uage,#appointment .input_box3 select,#appointment .input_box4 #utime{
+#appointment .input_box2 #age,#appointment .input_box3 select,#appointment .input-group #startTime{
     position: absolute;
     height: 35px;
     width: 90px;
@@ -179,11 +176,12 @@ body{
     color: #4b4848;
     margin: -2px 13px;
 }
-#appointment .input_box4{
+#appointment .input-group{
     width: 213px;
 }
-#appointment .input_box4 #utime{
-    margin: -2px 13px;
+#appointment .input-group #startTime{
+    width: 150px;
+    margin: -32px 42px;
 }
 #appointment .input_box .btn{
     width: 85px;

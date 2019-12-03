@@ -1,7 +1,7 @@
-
 /*导航栏*/
 $(".loginBefore").hide()
 $("#my").hide();
+$(".forget").hide()
 
 /*轮播图*/
 $("#myCarousel").carousel('cycle');
@@ -25,8 +25,9 @@ setInterval(async function() {
 
 /*-------------------------------------------------*/
 
-/*预约*/
-$("#appointment").hide()
+/*预约
+$("#appointment").hide()*/
+$(".dropdown-menu").hide()
 $(document).ready(function(){
     $(".appointment").click(function(){
         $("#appointment").show();
@@ -34,25 +35,23 @@ $(document).ready(function(){
     $(".iconfont").click(function(){
         $("#appointment").hide();
     });
+    $("#startTime").click(function(){
+        $(".dropdown-menu").hide();
+    });
 });
 function fnAppointment() {
-    var oUname = document.getElementById("uname")
-    var oUpass = document.getElementById("upass")
+    var age = document.getElementById("age")
+    var time = document.getElementById("startTime")
     var oError = document.getElementById("error_box")
     var isError = true;
-    if (oUname.value.length == 11 && oUname.value.length == 18) {
-        oError.innerHTML = "账号请输入手机号或身份证号";
+    
+    if (age.value.length > 3 || age.value.length < 0) {
+        oError.innerHTML = "年龄有误"
         isError = false;
         return;
-    }else for(var i=0;i<oUname.value.charCodeAt(i);i++){
-        if((oUname.value.charCodeAt(i)<48)||(oUname.value.charCodeAt(i)>57) && (oUname.value.charCodeAt(i)<97)||(oUname.value.charCodeAt(i)>122)){
-            oError.innerHTML = "必须为字母跟数字组成";
-            return;
-        }
     }
-    
-    if (oUpass.value.length > 20 || oUpass.value.length < 6) {
-        oError.innerHTML = "密码请输入6-20位字符"
+    if (time.value.length == 3) {
+        oError.innerHTML = "请输入时间"
         isError = false;
         return;
     }
@@ -67,6 +66,7 @@ $("#login").hide()
 $(document).ready(function(){
     $(".login").click(function(){
         $("#login").show();
+        $(".forget").show();
     });
     $(".iconfont").click(function(){
         $("#login").hide();
@@ -79,30 +79,47 @@ $(document).ready(function(){
 });
 
 function fnLogin() {
-    var oUname = document.getElementById("uname")
-    var oUpass = document.getElementById("upass")
+    var name = document.getElementById("name")
+    var pass = document.getElementById("pass")
     var oError = document.getElementById("error_box")
     var isError = true;
-    if (oUname.value.length == 11 && oUname.value.length == 18) {
-        oError.innerHTML = "账号请输入手机号或身份证号";
+  
+    if((name != /^(((1[3456789][0-9]{1})|(15[0-9]{1}))+\d{8})$/)&&(pass != /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/)){
+        oError.innerHTML = "账号输入不正确"
         isError = false;
-        return;
-    }else for(var i=0;i<oUname.value.charCodeAt(i);i++){
-        if((oUname.value.charCodeAt(i)<48)||(oUname.value.charCodeAt(i)>57) && (oUname.value.charCodeAt(i)<97)||(oUname.value.charCodeAt(i)>122)){
-            oError.innerHTML = "必须为字母跟数字组成";
-            return;
-        }
     }
-    
-    if (oUpass.value.length > 20 || oUpass.value.length < 6) {
+    if (pass.value.length > 20 || pass.value.length < 6) {
         oError.innerHTML = "密码请输入6-20位字符"
         isError = false;
         return;
     }
-    $("#login").hide()
+    $("#login").hide();
     $(".loginBefore").show();
-    $(".right").hide()
-    $(".loginAfter").hide()
+    $(".right").hide();
+    $(".loginAfter").hide();  
+  
+/*
+    //这里使用url，到时候将所有url提取到一个js或者公用类中，最好将url用拼接的方式（官网地址+接口地址）
+    var url = "http://139.9.204.172/service/rest/service.NoLoginService/collection/login";
+    //这里定义params,这里的密码不需要进行加密处理，因为我后台自己搞了加密解密比对方法。
+    var params = {
+        phone:name,
+        password:pass
+    }
+    debugger;
+    //在这里使用Ajax请求
+    $.postExtend(url, params, function(data){
+        debugger;
+        console.log(data);
+        if(data.code == 0){
+           console.log("登录成功！")
+                                        
+        }else{
+            console.log("登录失败！")
+        }
+    });
+*/
+    
 }
 
 /*-------------------------------------------------*/
@@ -119,35 +136,52 @@ $(document).ready(function(){
 });
 
 function fnregister() {
-    var oUname = document.getElementById("uname")
-    var oUpass = document.getElementById("upass")
-    var oUtel = document.getElementById("utel")
+    var phone = document.getElementById("tel")
+    var pass = document.getElementById("pass1")
     var oError = document.getElementById("error_box1")
     var isError = true;
-    if (oUname.value.length == 11 && oUtel.value.length == 18) {
-        oError.innerHTML = "账号请输入手机号或身份证号";
+
+    if(phone != /^(((1[3456789][0-9]{1})|(15[0-9]{1}))+\d{8})$/){
+        oError.innerHTML = "账号输入不正确"
         isError = false;
-        return;
-    }else if((oUname.value.charCodeAt(i)<97) || (oUname.value.charCodeAt(i)>122)){
-        oError.innerHTML = "必须为数字组成";
-        return;
-    }else for(var i=0;i<oUtel.value.charCodeAt(i);i++){
-        if((oUtel.value.charCodeAt(i)<48)||(oUtel.value.charCodeAt(i)>57) && (oUtel.value.charCodeAt(i)<97)||(oUtel.value.charCodeAt(i)>122)){
-            oError.innerHTML = "必须为字母跟数字组成";
-        return;
     }
-    }
-    
-    if (oUpass.value.length > 20 || oUpass.value.length < 6) {
+
+    if (pass.value.length > 20 || pass.value.length < 6) {
         oError.innerHTML = "密码请输入6-20位字符"
         isError = false;
         return;
     }
-    $("#register").hide()
+    $("#register").hide();
     $(".loginBefore").show();
-    $(".right").hide()
-    $(".loginAfter").hide()
+    $(".right").hide();
+    $(".loginAfter").hide();  
+/*
+    //这里使用url，到时候将所有url提取到一个js或者公用类中，最好将url用拼接的方式（官网地址+接口地址）
+    var url = "http://139.9.204.172/service/rest/service.NoLoginService/collection/register";
+    //这里定义params,这里的密码不需要进行加密处理，因为我后台自己搞了加密解密比对方法。
+    var params = {
+        gender:(".usex").val,
+        password:pass,
+        phone:phone
+    }
+    debugger;
+    //在这里使用Ajax请求
+    $.postExtend(url, params, function(data){
+        debugger;
+        console.log(data);
+        if(data.code == 0){
+           console.log("登录成功！")
+                                      
+        }else{
+            console.log("登录失败！")
+        }
+    });
+*/
 }
+
+/*-------------------------------------------------*/
+
+/*忘记密码*/
 
 /*-------------------------------------------------*/
 
