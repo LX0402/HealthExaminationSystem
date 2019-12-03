@@ -388,7 +388,6 @@ $(document).ready(function(){
         $("#firstScreen").hide()
         $("#introduce").hide()
         $("#contact").hide()
-        
     });
     $("#txt").click(function(){
         $(".ico").hide()
