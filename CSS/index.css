@@ -126,9 +126,10 @@ body{
 }
 
 /*轮播图*/
-#myCarousel{
+.lunbo1{
+    margin: auto;
     width: 1349px;
-    overflow: hidden;
+    height: 500px;
 }
 #myCarousel span{
     opacity: 0.3;
