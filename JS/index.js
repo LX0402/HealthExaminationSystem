@@ -93,32 +93,35 @@ function fnLogin() {
         isError = false;
         return;
     }
-    $("#login").hide();
-    $(".loginBefore").show();
-    $(".right").hide();
-    $(".loginAfter").hide();  
-  
-/*
-    //这里使用url，到时候将所有url提取到一个js或者公用类中，最好将url用拼接的方式（官网地址+接口地址）
-    var url = "http://139.9.204.172/service/rest/service.NoLoginService/collection/login";
     //这里定义params,这里的密码不需要进行加密处理，因为我后台自己搞了加密解密比对方法。
     var params = {
-        phone:name,
-        password:pass
+        phone:name.value,
+        password:pass.value
     }
-    debugger;
     //在这里使用Ajax请求
-    $.postExtend(url, params, function(data){
-        debugger;
+    $.postExtend(loginUrl, params, function(data){
         console.log(data);
         if(data.code == 0){
-           console.log("登录成功！")
-                                        
+            isLogin = true;
+            //这些操作可以使用一个函数总结起来。
+            $("#login").hide();
+            $(".loginBefore").show();
+            $(".right").hide();
+            $(".loginAfter").hide();
+            //这里可以弄一个提醒登录成功，然后等 一秒或者点击登录成功得时候再跳页面。
+            console.log("登录成功！")    
+            //仅用于测试
+            window.alert("登录成功！");
         }else{
+            //这里也需要跳登录失败。
             console.log("登录失败！")
+            //仅用于测试
+            window.alert("登录失败！");
+            //在登录框上显示错误信息
+            oError.innerHTML = data.message;
         }
     });
-*/
+
     
 }
 
@@ -141,6 +144,8 @@ function fnregister() {
     var oError = document.getElementById("error_box1")
     var isError = true;
 
+/*  这里得校验方式需要修改修改
+    后台得校验方式为：账号需要电话号码、密码需要6-11位字母与数字组成
     if(phone != /^(((1[3456789][0-9]{1})|(15[0-9]{1}))+\d{8})$/){
         oError.innerHTML = "账号输入不正确"
         isError = false;
@@ -151,32 +156,32 @@ function fnregister() {
         isError = false;
         return;
     }
-    $("#register").hide();
-    $(".loginBefore").show();
-    $(".right").hide();
-    $(".loginAfter").hide();  
-/*
-    //这里使用url，到时候将所有url提取到一个js或者公用类中，最好将url用拼接的方式（官网地址+接口地址）
-    var url = "http://139.9.204.172/service/rest/service.NoLoginService/collection/register";
+*/
     //这里定义params,这里的密码不需要进行加密处理，因为我后台自己搞了加密解密比对方法。
     var params = {
-        gender:(".usex").val,
-        password:pass,
-        phone:phone
+        //gender:(".usex").val,
+        //前面取值不对，现在使用测试值调试接口
+        gender:"Male",
+        password:pass.value,
+        phone:phone.value
     }
-    debugger;
     //在这里使用Ajax请求
-    $.postExtend(url, params, function(data){
-        debugger;
+    $.postExtend(registerUrl, params, function(data){
         console.log(data);
         if(data.code == 0){
-           console.log("登录成功！")
-                                      
+            //隐藏部分操作
+           $("#register").hide();
+           $(".loginBefore").show();
+           $(".right").hide();
+           $(".loginAfter").hide();  
+           console.log("注册成功！")
+           window.alert("注册成功！")
         }else{
-            console.log("登录失败！")
+            console.log("登录失败！" + data.message)
+            window.alert("登录失败！" + data.message)
         }
     });
-*/
+
 }
 
 /*-------------------------------------------------*/
