@@ -24,7 +24,6 @@ setInterval(async function() {
 }, delay);
 
 /*-------------------------------------------------*/
-
 /*预约*/
 $("#appointment").hide()
 $(".dropdown-menu").hide()
