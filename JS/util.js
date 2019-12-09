@@ -70,6 +70,8 @@ jQuery.extend({
 	postExtend:function(url,params,callback){
 		//显示加载动画
 		$.showLoading();
+		//拼接jsessionid
+		params.jsessionid = jsessionid;
 		jQuery.post(url,params,function(data){
 			//隐藏加载动画
 			$.hideLoading();

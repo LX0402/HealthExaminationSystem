@@ -1,7 +1,12 @@
 /*导航栏*/
 $(".loginBefore").hide()
-$("#my").hide();
-$(".forget").hide()
+$("#medicalRecord").hide();
+$(document).ready(function(){
+    $(".logOut").click(function(){
+        $(".loginBefore").hide()
+        $(".loginAfter").show()
+    });
+});
 
 /*轮播图*/
 $("#myCarousel").carousel('cycle');
@@ -26,7 +31,6 @@ setInterval(async function() {
 /*-------------------------------------------------*/
 /*预约*/
 $("#appointment").hide()
-$(".dropdown-menu").hide()
 $(document).ready(function(){
     $(".appointment").click(function(){
         $("#appointment").show();
@@ -65,7 +69,6 @@ $("#login").hide()
 $(document).ready(function(){
     $(".login").click(function(){
         $("#login").show();
-        $(".forget").show();
     });
     $(".iconfont").click(function(){
         $("#login").hide();
@@ -83,12 +86,13 @@ function fnLogin() {
     var oError = document.getElementById("error_box")
     var isError = true;
   
-    if((name != /^(((1[3456789][0-9]{1})|(15[0-9]{1}))+\d{8})$/)&&(pass != /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/)){
+    if(!/^1[34578]\d{9}$/.test(name.value)){
         oError.innerHTML = "账号输入不正确"
         isError = false;
+        return;
     }
-    if (pass.value.length > 20 || pass.value.length < 6) {
-        oError.innerHTML = "密码请输入6-20位字符"
+    if (pass.value.length > 11 || pass.value.length < 6) {
+        oError.innerHTML = "密码请输入6-11位字符"
         isError = false;
         return;
     }
@@ -101,11 +105,12 @@ function fnLogin() {
     $.postExtend(loginUrl, params, function(data){
         console.log(data);
         if(data.code == 0){
+            //
             isLogin = true;
+            jsessionid = data.jsessionid;
             //这些操作可以使用一个函数总结起来。
             $("#login").hide();
             $(".loginBefore").show();
-            $(".right").hide();
             $(".loginAfter").hide();
             //这里可以弄一个提醒登录成功，然后等 一秒或者点击登录成功得时候再跳页面。
             console.log("登录成功！")    
@@ -135,6 +140,10 @@ $(document).ready(function(){
     $(".iconfont").click(function(){
         $("#register").hide();
     });
+    $(".login").click(function(){
+        $("#login").show();
+        $("#register").hide();
+    });
 });
 
 function fnregister() {
@@ -148,10 +157,11 @@ function fnregister() {
     if(phone != /^(((1[3456789][0-9]{1})|(15[0-9]{1}))+\d{8})$/){
         oError.innerHTML = "账号输入不正确"
         isError = false;
+        return;
     }
 
-    if (pass.value.length > 20 || pass.value.length < 6) {
-        oError.innerHTML = "密码请输入6-20位字符"
+    if (pass.value.length > 11 || pass.value.length < 6) {
+        oError.innerHTML = "密码请输入6-11位字符"
         isError = false;
         return;
     }
@@ -185,7 +195,16 @@ function fnregister() {
 
 /*-------------------------------------------------*/
 
-/*忘记密码*/
+/*修改信息*/
+$("#changeInformation").hide();
+$(document).ready(function(){
+    $(".changeInformation").click(function(){
+        $("#changeInformation").show();
+    });
+    $(".iconfont").click(function(){
+        $("#changeInformation").hide();
+    });
+});
 
 /*-------------------------------------------------*/
 
@@ -377,7 +396,7 @@ $(".newFive").mouseover(function (){
 
 /*-------------------------------------------------*/
 
-/*我的*/
+/*体检记录*/
 $(function () {
     $("#btn").click(function () {
         var $sea=$('#txt').val();
@@ -386,13 +405,26 @@ $(function () {
     });
 });
 $(document).ready(function(){
-    $(".my").click(function(){
-        $("#my").show();
+    $(".medicalRecord").click(function(){
+        $("#medicalRecord").show();
         $("#myCarousel").hide()
         $("#firstScreen").hide()
         $("#introduce").hide()
         $("#contact").hide()
-        
+    });
+    $(".firstScreen").click(function(){
+        $("#medicalRecord").hide();
+        $("#myCarousel").show()
+        $("#firstScreen").show()
+        $("#introduce").show()
+        $("#contact").show()
+    });
+    $(".main").click(function(){
+        $("#medicalRecord").hide();
+        $("#myCarousel").show()
+        $("#firstScreen").show()
+        $("#introduce").show()
+        $("#contact").show()
     });
     $("#txt").click(function(){
         $(".ico").hide()

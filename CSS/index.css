@@ -5,18 +5,6 @@ body{
     background-size: 100% 100%;
 }
 /*头部信息*/
-#headMessage h1{
-    padding: 15px 0px 10px;
-}
-#headMessage h1 a{
-    display: block;
-    width: 200px;
-    height: 50px;
-    background: url(../images/logo.png) center no-repeat;
-    /*首行缩进*/
-    text-indent: -999px;
-    overflow: hidden;
-}
 #headMessage li{
     float: left;
     line-height: 75px;
@@ -27,6 +15,7 @@ body{
     color: #000;
     font-size: 20px;
     padding: 6px 15px;
+    line-height: 70px;
     text-decoration: none;
 }
 #headMessage li a:hover{
@@ -39,10 +28,15 @@ body{
     font-weight: bolder;
 }
 
+/*登录后*/
+#headMessage .loginBefore .dropdown-menu li a{
+    padding: 0 36px;
+}
+
 /*-------------------------------------------------*/
 
 /*登录*/
-#login,#register,#appointment{
+#login,#register,#appointment,#changeInformation{
     height: 365px;
     width: 500px;
     position: absolute;
@@ -53,27 +47,39 @@ body{
     z-index: 2001;
     top: 140px;
 }
-#login .close,#register .close,#appointment .close{
+#login .close,#register .close,#appointment .close,#changeInformation .close{
     margin: 5% 5%;
     cursor:pointer;
     color: #052DDD;
 }
-#login .input_box .p1,#login .input_box .p2,#register .input_box .p2,#register .input_box .p3{
+#login .input_box1,#login .input_box2,#register .input_box2,#register .input_box3{
     font-weight: bolder;
     color: #fc84e8;
+    line-height: 35px;
 }
-#login .input_box .p1{
-    padding: 50px 204px 5px;
+#login .input_box1{
+    height: 35px;
+    width: 300px;
+    margin: 60px auto;
 }
-#login .input_box .p2,#register .input_box .p2{
-    padding: 25px 237px 5px;
+#login .input_box2{
+    height: 35px;
+    width: 300px;
+    margin: 60px auto;
 }
-#login .input_box #name,#login .input_box #pass,#register .input_box #pass1,#register .input_box #tel{
+#login .input_box1 #name,#login .input_box2 #pass{
     width: 250px;
     height: 35px;
     outline: none;
-    border-radius: 20px 20px 20px 20px;
-    margin: 0 125px 0;
+}
+#login .input_box1 #name,#login .input_box2 #pass{
+    text-indent: 3px;
+    color: #000;
+    background-color: rgba(255, 255, 255,-0.4);
+    margin: 0 5px 0;
+    border: none;
+    border-bottom: 3px solid #48b7d9;
+    position: absolute;
 }
 #login .input_box .btn{
     width: 85px;
@@ -88,10 +94,10 @@ body{
     margin: 25px 64px 5px 187px;
 }
 #login .input_box .primary{
-    margin: 10px 64px 5px 134px;
+    margin: 0 64px 5px 134px;
 }
 #login .input_box .info{
-    margin:5px 0 0 0;
+    margin:-5px 0 0 0;
 }
 
 /*-------------------------------------------------*/
@@ -101,18 +107,33 @@ body{
     color: #fc0107;
     margin: 17px 64px 5px 190px;
 }
-#register .input_box1{
-    margin: 54px 0 0 164px;
-    color: #fc84e8;
-    font-weight: bolder;
+#register .input_box2{
+    height: 35px;
+    width: 300px;
+    margin: 40px auto;
 }
-#register .input_box1 .usex{
-    vertical-align: middle;
-    width: 40px;
-    height: 33px;
+#register .input_box3{
+    height: 35px;
+    width: 300px;
+    margin: 75px auto;
 }
-#register .input_box .p3{
-    padding: 25px 230px 5px;
+#register .input_box2 #pass1,#register .input_box3 #tel{
+    width: 250px;
+    height: 35px;
+    text-indent: 3px;
+    color: #000;
+    background-color: rgba(255, 255, 255,-0.4);
+    border: none;
+    border-bottom: 3px solid #48b7d9;
+    outline: none;
+}
+#register .input_box2 #pass1{
+    margin: 0 5px 0;
+    position: absolute;
+}
+#register .input_box3 #tel{
+    margin: 0 5px 0;
+    position: absolute;
 }
 #register .input_box .btn{
     width: 115px;
@@ -142,30 +163,21 @@ body{
     color: #fc0107;
     margin: 17px 64px 5px 190px;
 }
-#appointment .input_box2 .p2,#appointment .input_box3 .p3,#appointment .input-group .p4{
+#appointment .input_box3 .p3,#appointment .input-group .p4{
     line-height: 33px;
     font-weight: bolder;
     margin-right: 5px;
     color: #fc84e8;
 }
-#appointment .input_box2{
-    height: 35px;
-    width: 100px;
-    box-sizing: border-box;
-    margin: 69px 0 25px 177px;
-}
-#appointment .input_box2 #age{
-    margin: -2px 30px;
-}
 #appointment .input_box3{
     width: 154px;
+    margin: 80px 0 25px 166px;
 }
 #appointment .input_box3,#appointment .input-group{
     height: 35px;
     box-sizing: border-box;
-    margin: 5px 0 25px 166px;
 }
-#appointment .input_box2 #age,#appointment .input_box3 select,#appointment .input-group #startTime{
+#appointment .input_box3 select,#appointment .input-group #startTime{
     position: absolute;
     height: 35px;
     width: 90px;
@@ -179,6 +191,7 @@ body{
 }
 #appointment .input-group{
     width: 213px;
+    margin: 40px 0 25px 166px;
 }
 #appointment .input-group #startTime{
     width: 150px;
@@ -196,19 +209,89 @@ body{
 
 /*-------------------------------------------------*/
 
-/*我的*/
-#my{
+/*修改信息*/
+#changeInformation .input_box1 .p1,#changeInformation .input_box2 .p2,#changeInformation .input_box3 .p3,#changeInformation .input_box4 .p4{
+    line-height: 33px;
+    font-weight: bolder;
+    margin-right: 5px;
+    color: #fc84e8;
+}
+#changeInformation .input_box1{
+    margin: 54px 143px 0 ;
+}
+#changeInformation .input_box1 .usex{
+    vertical-align: middle;
+    width: 40px;
+    height: 33px;
+}
+#changeInformation .input_box2{
+    height: 35px;
+    width: 100px;
+    box-sizing: border-box;
+    margin: 8px 174px 25px ;
+}
+#changeInformation .input_box2 #age{
+    width: 90px;
+}
+#changeInformation .input_box2 #age,#changeInformation .input_box3 #tel,#changeInformation .input_box4 #card{
+    position: absolute;
+    height: 35px;
+    text-indent: 3px;
+    color: #000;
+    background-color: rgba(255, 255, 255,-0.4);
+    border: none;
+    border-bottom: 3px solid #48b7d9;
+    outline: none;
+}
+#changeInformation .input_box3{
+    margin: 0 101px 0;
+}
+#changeInformation .input_box3 #tel{
+    margin: 0 5px 0;
+    position: absolute;
+}
+#changeInformation .input_box4{
+    margin: 30px 101px 0;
+}
+}
+#changeInformation .input_box4 #card{
+    margin: 30px 5px 0;
+    position: absolute;
+}
+#changeInformation .input_box .btn{
+    width: 85px;
+    height: 35px;
+    color: #fff;
+    border-radius: 20px 20px 20px 20px;
+    outline: none;
+    border: none;
+}
+#changeInformation #error_box1{
+    color: #fc0107;
+    margin: 25px 64px 5px 187px;
+}
+#changeInformation .input_box .primary{
+    margin: 0 64px 5px 134px;
+}
+#changeInformation .input_box .info{
+    margin:-6px 0 0 0;
+}
+
+/*-------------------------------------------------*/
+
+/*体检记录*/
+#medicalRecord{
     width: 1349px;
     height: 500px;
     position: relative;
     transform: translate(-50%,0);/*水平居中*/
     left: 50%;
 }
-#my .searchContent{
+#medicalRecord .searchContent{
     height: 40px;
     margin: 23px 359px;
 }
-#my .searchBox{
+#medicalRecord .searchBox{
     width: 554px;
     height: 38px;
     box-sizing: border-box;
@@ -218,7 +301,7 @@ body{
     overflow: hidden;
     position: relative;
 }
-#my .searchBox input{
+#medicalRecord .searchBox input{
     width: 490px;
     height: 36px;
     line-height: 36px;
@@ -229,7 +312,7 @@ body{
     z-index: 2;
     background-color: transparent;
 }
-#my .searchBox i{
+#medicalRecord .searchBox i{
     position: absolute;
     top: 6px;
     left: 14px;
@@ -237,11 +320,11 @@ body{
     line-height: 25px;
     color: #9c9c9c;
 }
-#my .btn{
+#medicalRecord .btn{
     padding: 0;
     margin: -1px 0 0 -2px;
 }
-#my .searchContent button{
+#medicalRecord .searchContent button{
     width: 74px;
     height: 38px;
     text-align: center;
@@ -253,23 +336,23 @@ body{
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c4abf8da', endColorstr='#8eddfad8', GradientType=1);
     border-radius: 0 20px 20px 0;
 }
-#my .searchContent #btn:hover{
+#medicalRecord .searchContent #btn:hover{
     color: #000;
 }
-#my table{
+#medicalRecord table{
     width: 1030px;
     border: 2px solid #8eddfa;
     margin: 0 auto;
     border-collapse: collapse;/*边框合并*/
 }
-#my table .set{
+#medicalRecord table .set{
     width: 470px;
 }
-#my tr{
+#medicalRecord tr{
     height: 30px;
     text-align: center;
 }
-#my th,td{
+#medicalRecord th,td{
     text-align: center;
     border: 2px solid #8eddfa;
 }
@@ -486,4 +569,3 @@ body{
 }
 
 
-/**/
