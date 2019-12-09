@@ -331,67 +331,67 @@ $("#lunbobox ul li,.lunbo a img,#toright,#toleft ").hover(//鼠标移进  移出
 /*-------------------------------------------------*/
 
 /*套餐信息*/
-$(".newOne").hide()
-$(".newTwo").hide()
-$(".newThird").hide()
-$(".newFour").hide()
-$(".newFive").hide()
+$(".new0").hide()
+$(".new1").hide()
+$(".new2").hide()
+$(".new3").hide()
+$(".new4").hide()
 
 $(document).ready(function(){
-    $(".comboOne").mouseover(function (){
-        $(".newOne").show();
+    $(".combo0").mouseover(function (){
+        $(".new0").show();
         $("#lunbobox").hide();
     }).mouseout(function (){
-        $(".newOne").hide();
+        $(".new0").hide();
         $("#lunbobox").show();
     });
 });
 
-$(".comboTwo").mouseover(function (){
-    $(".newTwo").show();
+$(".combo1").mouseover(function (){
+    $(".new1").show();
 }).mouseout(function (){
-    $(".newTwo").hide();
+    $(".new1").hide();
 });
-$(".comboThird").mouseover(function (){
-    $(".newThird").show();
+$(".combo2").mouseover(function (){
+    $(".new2").show();
 }).mouseout(function (){
-    $(".newThird").hide();
+    $(".new2").hide();
 });
-$(".comboFour").mouseover(function (){
-    $(".newFour").show();
+$(".combo3").mouseover(function (){
+    $(".new3").show();
 }).mouseout(function (){
-    $(".newFour").hide();
+    $(".new3").hide();
 });
-$(".comboFive").mouseover(function (){
-    $(".newFive").show();
+$(".combo4").mouseover(function (){
+    $(".new4").show();
 }).mouseout(function (){
-    $(".newFive").hide();
+    $(".new4").hide();
 });
 
-$(".newOne").mouseover(function (){
-    $(".newOne").show();
+$(".new0").mouseover(function (){
+    $(".new0").show();
 }).mouseout(function (){
-    $(".newOne").hide();
+    $(".new0").hide();
 });
-$(".newTwo").mouseover(function (){
-    $(".newTwo").show();
+$(".new1").mouseover(function (){
+    $(".new1").show();
 }).mouseout(function (){
-    $(".newTwo").hide();
+    $(".new1").hide();
 });
-$(".newThird").mouseover(function (){
-    $(".newThird").show();
+$(".new2").mouseover(function (){
+    $(".new2").show();
 }).mouseout(function (){
-    $(".newThird").hide();
+    $(".new2").hide();
 });
-$(".newFour").mouseover(function (){
-    $(".newFour").show();
+$(".new3").mouseover(function (){
+    $(".new3").show();
 }).mouseout(function (){
-    $(".newFour").hide();
+    $(".new3").hide();
 });
-$(".newFive").mouseover(function (){
-    $(".newFive").show();
+$(".new4").mouseover(function (){
+    $(".new4").show();
 }).mouseout(function (){
-    $(".newFive").hide();
+    $(".new4").hide();
 });
 
 /*-------------------------------------------------*/
@@ -430,3 +430,33 @@ $(document).ready(function(){
         $(".ico").hide()
     });
 });
+
+//套餐数据，需要将以下数据添加到静态页面中(其中 showImg 使用，myUrl + /service/rest/tk.File/fc507b71dab54d678ca610c20655a7ea)
+/*[
+    {\"suitableSex\":\"两者都\",\"ageMin\":16,\"ageMax\":100,\"createTime\":\"2019-11-23 13:06\",\"meaning\":\"通过仪器测量人体基本健康指标。例如：血压是否正常，有无体重偏低、超重或肥胖。\",\"medicalName\":\"一般检查A\",\"id\":\"fc073ea338f542b6a17d4ecdb5023e36\",\"items\":\"体重\",\"showImg\":\"b8c80b4f26cd4c1599644b19adc28db4\",\"isShow\":null},
+    {\"suitableSex\":\"两者都\",\"ageMin\":1,\"ageMax\":111,\"createTime\":\"2019-11-23 19:44\",\"meaning\":\"撒旦飞洒地方技术的技法卢卡斯京东方考虑\",\"medicalName\":\"一般检查B\",\"id\":\"edf09ad6bd654055911437be7a24db60\",\"items\":\"默认项目\",\"showImg\":\"fc507b71dab54d678ca610c20655a7ea\",\"isShow\":null}
+] */
+
+//进入网页调用该接口获取套餐信息
+$(
+    function(){
+        $.postExtend(getAllMedicalItemsUrl,{},function(data){
+            if(data.code == 0 ){
+                var json = JSON.parse(data.data);
+                json.forEach(function(itemCount,index){
+                    console.log(itemCount);
+                    //加载导航栏数据
+                    $("#sideNavUl").append("<li class='combo"+index+"'> <a href='javascript:void(0)'>"+itemCount.medicalName+"</a><span class='iconfont fr'>&#xe63d;</span> </li>");
+                    $("#newsDiv").append("<div class='new"+index+"'><h1>"+itemCount.medicalName+"</h1></div>");
+                    //加载图片(如果后台没有给出图片，你就要使用默认图片)
+                    $("#lunboDiv").append("<a href='javascript:void(0)'><img src='"+myUrl+"/service/rest/tk.File/"+itemCount.showImg+"'></a>");
+                });
+            }else{
+                console.log("获取数据失败！");
+            }
+        })
+    }
+
+    
+
+)
