@@ -153,7 +153,7 @@ function fnregister() {
     var isError = true;
 
 /*  这里得校验方式需要修改修改
-    后台得校验方式为：账号需要电话号码、密码需要6-11位字母与数字组成
+    后台得校验方式为：账号需要电话号码、密码需要6-11位字母与数字组成*/
     if(phone != /^(((1[3456789][0-9]{1})|(15[0-9]{1}))+\d{8})$/){
         oError.innerHTML = "账号输入不正确"
         isError = false;
@@ -165,7 +165,7 @@ function fnregister() {
         isError = false;
         return;
     }
-*/
+
     //这里定义params,这里的密码不需要进行加密处理，因为我后台自己搞了加密解密比对方法。
     var params = {
         //gender:(".usex").val,
