@@ -110,7 +110,7 @@
                     </select>
                 </div>
                 <div class="input-group">
-                    <span class="p4">时间：</span>
+                    <span class="p4">时&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间：</span>
                     <input name="startTime" id="startTime" class="form-control"  type="text"  datepicker="date">
                 </div>
                 <div id="error_box"><br></div>
@@ -224,23 +224,7 @@
             </div>
             <!--侧边导航-->
             <div class="sideNav fl">
-                <ul>
-                    <li class="comboOne">
-                        <a href="#">套餐一</a><span class="iconfont fr">&#xe63d;</span>
-                    </li>
-                    <li class="comboTwo">
-                        <a href="#">套餐二</a><span class="iconfont fr">&#xe63d;</span>
-                    </li>    
-                    <li class="comboThird">
-                        <a href="#">套餐三</a><span class="iconfont fr">&#xe63d;</span>
-                    </li>
-                    <li class="comboFour">
-                        <a href="#">套餐四</a><span class="iconfont fr">&#xe63d;</span>
-                    </li>
-                    <li class="comboFive">
-                        <a href="#">套餐五</a><span class="iconfont fr">&#xe63d;</span>
-                    </li>
-                </ul>
+                <ul id="sideNavUl"></ul>
             </div>
 
             <!--图片容器-->
@@ -248,13 +232,7 @@
                 <!--轮播图-->
                 <div id="lunbobox">
                     <div id="toleft">&lt;</div>
-                        <div class="lunbo">
-                            <a href="#"><img src="http://www.jq22.com/img/cs/500x300a.png"></a>
-                            <a href="#"><img src="http://www.jq22.com/img/cs/500x300b.png"></a>
-                            <a href="#"><img src="http://www.jq22.com/img/cs/500x300c.png"></a>
-                            <a href="#"><img src="http://www.jq22.com/img/cs/500x300d.png"></a>
-                            <a href="#"><img src="http://www.jq22.com/img/cs/500x300.png"></a>
-                        </div>
+                        <div id="lunboDiv" class="lunbo"></div>
                         <div id="toright">&gt;</div>
                         <ul>
                             <li></li>
@@ -268,23 +246,7 @@
                 </div>
 
                 <!--套餐信息-->
-                <div class="news">
-                    <div class="newOne">
-                        <h1>套餐1</h1>
-                    </div>
-                    <div class="newTwo">
-                        <h1>套餐2</h1>
-                    </div>
-                    <div class="newThird">
-                        <h1>套餐3</h1>
-                    </div>
-                    <div class="newFour">
-                        <h1>套餐4</h1>
-                    </div>
-                    <div class="newFive">
-                        <h1>套餐5</h1>
-                    </div>
-                </div>
+                <div id="newsDiv" class="news"></div>
             </div>
 
         </div>
