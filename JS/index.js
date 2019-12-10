@@ -331,68 +331,17 @@ $("#lunbobox ul li,.lunbo a img,#toright,#toleft ").hover(//鼠标移进  移出
 /*-------------------------------------------------*/
 
 /*套餐信息*/
-$(".new0").hide()
-$(".new1").hide()
-$(".new2").hide()
-$(".new3").hide()
-$(".new4").hide()
-
+$(".news").hide();
 $(document).ready(function(){
-    $(".combo0").mouseover(function (){
-        $(".new0").show();
+    $("#sideNavUl").mouseover(function (){
+        $(".news").show();
         $("#lunbobox").hide();
     }).mouseout(function (){
-        $(".new0").hide();
+        $(".news").hide();
         $("#lunbobox").show();
     });
 });
 
-$(".combo1").mouseover(function (){
-    $(".new1").show();
-}).mouseout(function (){
-    $(".new1").hide();
-});
-$(".combo2").mouseover(function (){
-    $(".new2").show();
-}).mouseout(function (){
-    $(".new2").hide();
-});
-$(".combo3").mouseover(function (){
-    $(".new3").show();
-}).mouseout(function (){
-    $(".new3").hide();
-});
-$(".combo4").mouseover(function (){
-    $(".new4").show();
-}).mouseout(function (){
-    $(".new4").hide();
-});
-
-$(".new0").mouseover(function (){
-    $(".new0").show();
-}).mouseout(function (){
-    $(".new0").hide();
-});
-$(".new1").mouseover(function (){
-    $(".new1").show();
-}).mouseout(function (){
-    $(".new1").hide();
-});
-$(".new2").mouseover(function (){
-    $(".new2").show();
-}).mouseout(function (){
-    $(".new2").hide();
-});
-$(".new3").mouseover(function (){
-    $(".new3").show();
-}).mouseout(function (){
-    $(".new3").hide();
-});
-$(".new4").mouseover(function (){
-    $(".new4").show();
-}).mouseout(function (){
-    $(".new4").hide();
-});
 
 /*-------------------------------------------------*/
 
@@ -445,18 +394,38 @@ $(
                 var json = JSON.parse(data.data);
                 json.forEach(function(itemCount,index){
                     console.log(itemCount);
-                    //加载导航栏数据
-                    $("#sideNavUl").append("<li class='combo"+index+"'> <a href='javascript:void(0)'>"+itemCount.medicalName+"</a><span class='iconfont fr'>&#xe63d;</span> </li>");
-                    $("#newsDiv").append("<div class='new"+index+"'><h1>"+itemCount.medicalName+"</h1></div>");
+                    /*加载导航栏数据*/
+                    $("#sideNavUl").append("<li class='combo'>"+itemCount.medicalName+"<span class='iconfont fr'>&#xe63d;</span> </li>");
+                    $("#content").append("<div id='new"+index+"' class='panel'><h1>"+itemCount.medicalName+"</h1></div>");
                     //加载图片(如果后台没有给出图片，你就要使用默认图片)
                     $("#lunboDiv").append("<a href='javascript:void(0)'><img src='"+myUrl+"/service/rest/tk.File/"+itemCount.showImg+"'></a>");
+                    
                 });
             }else{
                 console.log("获取数据失败！");
             }
         })
     }
-
-    
-
 )
+//添加active
+onload = function () {
+    function removeActiveClass(node) {
+        node.className = '';
+    }
+
+    document.querySelector('ul[id=sideNavUl]').onmouseover = function (e) {
+        Array.prototype.forEach.call(document.querySelectorAll('ul[id=sideNavUl] > li'), removeActiveClass);
+        var target = e.target;
+        target.className = 'li-active';
+    }
+}
+/*对应显示*/
+$(window).on('load',function(){
+    $("#content>div").eq(0).show().siblings().hide();
+})
+$("#sideNavUl>li").mouseover(function () {
+    $(this).addClass("li-active").siblings().removeClass("li-active");
+    var index = $(this).index();
+    $("#content>div").eq(index).show().siblings().hide();
+
+})

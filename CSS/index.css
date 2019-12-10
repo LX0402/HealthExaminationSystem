@@ -379,8 +379,6 @@ body{
     box-sizing: border-box;
 }
  .sideNav li{
-    height: 110px;
-    line-height: 110px;
     padding-left: 17px;
     color: #999;
     font-size: 14px;
@@ -388,6 +386,9 @@ body{
     transition: background-color 0.3s;
     overflow: hidden;
     white-space: nowrap;
+    /*自适应高度*/
+    height: auto;
+    min-height: 205px;
 }
  .sideNav li a{
     font-size: 15px;
@@ -400,7 +401,6 @@ body{
     margin-right: 5px;
 }
  .sideNav li:hover{
-    background: #d5e7f3;
     color: #e1c68b;
 }
  .sideNav li:hover a{
@@ -424,6 +424,8 @@ body{
     position:absolute;
     top:0px;
     z-index: 10;
+    overflow: hidden;
+    clear: both;
 }
 #firstScreen .lunbo {
 	width:1012px;
@@ -441,12 +443,12 @@ body{
 	position:absolute;
 	bottom:25px;
 	right:0px;
-    left:440px;
+    left:440px;   
 }
 #firstScreen #lunbobox ul li {
 	cursor:pointer;
 	width:25px;
-	height:5px;
+    height:5px;
 	border:1px solid #cccccc;
 	float:left;
 	list-style:none;
@@ -491,32 +493,15 @@ body{
 #firstScreen .news{
     width:1012px;
     height:550px;
-    left: 249px;
-    position: relative;
-    margin-top: -549px;
-}
-#firstScreen .news .newOne,#firstScreen .news .newTwo,#firstScreen .news .newThird,#firstScreen .news .newFour,#firstScreen .news .newFive{
-    width:1012px;
-    height:550px;
+    margin: -549px 251px;
     z-index: 6000;
     position: absolute;
+    background-color: #fff;
 }
-#firstScreen .news .newOne{
-    background-color: #000;
+#firstScreen .news #content{
+    width:1012px;
+    height:550px;
 }
-#firstScreen .news .newTwo{
-    background-color: rgb(16, 223, 85);
-}
-#firstScreen .news .newThird{
-    background-color: rgb(250, 6, 6);
-}
-#firstScreen .news .newFour{
-    background-color: rgb(7, 132, 204);
-}
-#firstScreen .news .newFive{
-    background-color: rgb(247, 21, 153);
-}
-
 /*介绍*/
 #introduce{
     width: 1000px;
