@@ -396,7 +396,7 @@ $(
                     console.log(itemCount);
                     /*加载导航栏数据*/
                     $("#sideNavUl").append("<li class='combo'>"+itemCount.medicalName+"<span class='iconfont fr'>&#xe63d;</span> </li>");
-                    $("#content").append("<div id='new"+index+"' class='panel'><h1>"+itemCount.medicalName+"</h1></div>");
+                    $("#content1").append("<div id='new"+index+"' class='panel'>"+itemCount.medicalName+"</div>");
                     //加载图片(如果后台没有给出图片，你就要使用默认图片)
                     $("#lunboDiv").append("<a href='javascript:void(0)'><img src='"+myUrl+"/service/rest/tk.File/"+itemCount.showImg+"'></a>");
                     
@@ -419,13 +419,14 @@ onload = function () {
         target.className = 'li-active';
     }
 }
-/*对应显示*/
+/*对应显示
 $(window).on('load',function(){
-    $("#content>div").eq(0).show().siblings().hide();
-})
-$("#sideNavUl>li").mouseover(function () {
+    $("#content1>div").eq(0).show().siblings().hide();
+})*/
+$("#sideNavUl").find("li").mouseover(function () {
     $(this).addClass("li-active").siblings().removeClass("li-active");
     var index = $(this).index();
-    $("#content>div").eq(index).show().siblings().hide();
+    console.log(index);
+    $("#content1>div").eq(index).show().siblings().hide();
 
 })

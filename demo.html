@@ -35,15 +35,13 @@
         <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script type="text/javascript">
-			$(window).on('load',function(){
-				$(".contenrt>div").eq(0).show().siblings().hide();
-			})
+			
 		 
 		 
 			 $(".tabItems>li").mouseover(function () {
 					$(this).addClass("active").siblings().removeClass("active");
 					var index = $(this).index();
-					$(".content>h1").eq(index).show().siblings().hide();
+					$(".content>div").eq(index).show().siblings().hide();
 
 			 })
 		</script>

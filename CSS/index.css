@@ -389,6 +389,7 @@ body{
     /*自适应高度*/
     height: auto;
     min-height: 205px;
+    cursor: pointer;
 }
  .sideNav li a{
     font-size: 15px;
