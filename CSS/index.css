@@ -497,11 +497,15 @@ body{
     margin: -549px 251px;
     z-index: 6000;
     position: absolute;
-    background-color: #fff;
 }
-#firstScreen .news #content{
+#firstScreen .news #content1 .panel{
     width:1012px;
     height:550px;
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    background-color: transparent;
 }
 /*介绍*/
 #introduce{

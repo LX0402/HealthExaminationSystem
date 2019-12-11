@@ -335,10 +335,8 @@ $(".news").hide();
 $(document).ready(function(){
     $("#sideNavUl").mouseover(function (){
         $(".news").show();
-        $("#lunbobox").hide();
     }).mouseout(function (){
         $(".news").hide();
-        $("#lunbobox").show();
     });
 });
 
@@ -399,7 +397,28 @@ $(
                     $("#content1").append("<div id='new"+index+"' class='panel'>"+itemCount.medicalName+"</div>");
                     //加载图片(如果后台没有给出图片，你就要使用默认图片)
                     $("#lunboDiv").append("<a href='javascript:void(0)'><img src='"+myUrl+"/service/rest/tk.File/"+itemCount.showImg+"'></a>");
-                    
+                    //添加active
+                    onload = function () {
+                        function removeActiveClass(node) {
+                            node.className = '';
+                        }
+
+                        document.querySelector('ul[id=sideNavUl]').onmouseover = function (e) {
+                            Array.prototype.forEach.call(document.querySelectorAll('ul[id=sideNavUl] > li'), removeActiveClass);
+                            var target = e.target;
+                            target.className = 'li-active';
+                        }
+                    }
+                    /*对应显示
+                    $(window).on('load',function(){
+                        $("#content1>div").eq(0).show().siblings().hide();
+                    })*/
+                    $("#sideNavUl").find("li").mouseover(function () {
+                        $(this).addClass("li-active").siblings().removeClass("li-active");
+                        var index = $(this).index();
+                        $("#content1>div").eq(index).show().siblings().hide();
+
+                    })
                 });
             }else{
                 console.log("获取数据失败！");
@@ -407,26 +426,3 @@ $(
         })
     }
 )
-//添加active
-onload = function () {
-    function removeActiveClass(node) {
-        node.className = '';
-    }
-
-    document.querySelector('ul[id=sideNavUl]').onmouseover = function (e) {
-        Array.prototype.forEach.call(document.querySelectorAll('ul[id=sideNavUl] > li'), removeActiveClass);
-        var target = e.target;
-        target.className = 'li-active';
-    }
-}
-/*对应显示
-$(window).on('load',function(){
-    $("#content1>div").eq(0).show().siblings().hide();
-})*/
-$("#sideNavUl").find("li").mouseover(function () {
-    $(this).addClass("li-active").siblings().removeClass("li-active");
-    var index = $(this).index();
-    console.log(index);
-    $("#content1>div").eq(index).show().siblings().hide();
-
-})
