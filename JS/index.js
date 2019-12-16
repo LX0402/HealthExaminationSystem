@@ -1,12 +1,25 @@
 /*导航栏*/
 $(".loginBefore").hide()
 $("#medicalRecord").hide();
-$(document).ready(function(){
-    $(".logOut").click(function(){
-        $(".loginBefore").hide()
-        $(".loginAfter").show()
-    });
-});
+
+/*-------------------------------------------------*/
+
+/*刷新不退出*/
+
+/*-------------------------------------------------*/
+
+/*退出登录*/
+function fnLogOut(){
+    if(isLogin == false){
+        $(".logOut").click(function(){
+            $(".loginBefore").hide()
+            $(".loginAfter").show()  
+        });
+    } 
+    
+}
+
+/*-------------------------------------------------*/
 
 /*轮播图*/
 $("#myCarousel").carousel('cycle');
@@ -29,6 +42,7 @@ setInterval(async function() {
 }, delay);
 
 /*-------------------------------------------------*/
+
 /*预约*/
 $("#appointment").hide()
 $(document).ready(function(){
@@ -103,7 +117,6 @@ function fnLogin() {
     }
     //在这里使用Ajax请求
     $.postExtend(loginUrl, params, function(data){
-        console.log(data);
         if(data.code == 0){
             //
             isLogin = true;
@@ -176,7 +189,6 @@ function fnregister() {
     }
     //在这里使用Ajax请求
     $.postExtend(registerUrl, params, function(data){
-        console.log(data);
         if(data.code == 0){
             //隐藏部分操作
            $("#register").hide();
