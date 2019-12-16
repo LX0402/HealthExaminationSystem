@@ -392,10 +392,7 @@ $(
                             target.className = 'li-active';
                         }
                     }
-                    /*对应显示
-                    $(window).on('load',function(){
-                        $("#content1>div").eq(0).show().siblings().hide();
-                    })*/
+                    /*对应显示*/
                     $("#sideNavUl").find("li").mouseover(function () {
                         $(this).addClass("li-active").siblings().removeClass("li-active");
                         var index = $(this).index();
