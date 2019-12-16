@@ -399,34 +399,29 @@ $(
             jessionid:jessionid
         }
         //判断用户是否登录
-        $.postExtend(getUserBySessionIdUrl,params,function(data){
-            console.log(data);
-            if(data.code == 0){
-                var dataParams = JSON.parse(data.data);
-                //修改H5存储的数据
-                localStorage .setItem('jsessionid',dataParams.jsessionid);
-                //处理登录的样式内容（隐藏登录注册内容）
-                //初始页面时没有该内容，如何进行隐藏。
-                // window.onload = function(){
-                //     $("#login").hide();
-                //     $(".loginBefore").show();
-                //     $(".loginAfter").hide();
-                // }
-                $(document).ready(function(){
-                    $("#login").hide();
-                    $(".loginBefore").show();
-                    $(".loginAfter").hide();
-                  });
-            }else if(data.code == 7 ){
-                //修改H5存储数据
-                localStorage .setItem('jsessionid',null);
-                window.alert(data.message);
-            }else{
-                //修改H5存储数据
-                sessionStorage.setItem('jsessionid',null);
-            }
-        })
-        
+        if(jessionid != "" ){
+            $.postExtend(getUserBySessionIdUrl,params,function(data){
+                console.log(data);
+                if(data.code == 0){
+                    var dataParams = JSON.parse(data.data);
+                    //修改H5存储的数据
+                    localStorage .setItem('jsessionid',dataParams.jsessionid);
+                    //初始页面时没有该内容，如何进行隐藏。
+                    $(document).ready(function(){
+                        $("#login").hide();
+                        $(".loginBefore").show();
+                        $(".loginAfter").hide();
+                      });
+                }else if(data.code == 7 ){
+                    //修改H5存储数据
+                    localStorage .setItem('jsessionid','');
+                    window.alert(data.message);
+                }else{
+                    //修改H5存储数据
+                    sessionStorage.setItem('jsessionid','');
+                }
+            })
+        }
 
         $.postExtend(getAllMedicalItemsUrl,{},function(data){
             if(data.code == 0 ){

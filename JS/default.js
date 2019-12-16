@@ -1,7 +1,7 @@
 //用于本地测试
-var myUrl = "http://localhost:8080/medical_test_war_exploded";
+//var myUrl = "http://localhost:8080/medical_test_war_exploded";
 //用于服务器测试
-//var myUrl = "http://139.9.204.172";
+var myUrl = "http://139.9.204.172";
 
 
 //登录
