@@ -2,21 +2,11 @@
 $(".loginBefore").hide()
 $("#medicalRecord").hide();
 
-/*-------------------------------------------------*/
-
-/*刷新不退出*/
-
-/*-------------------------------------------------*/
-
 /*退出登录*/
 function fnLogOut(){
-    if(isLogin == false){
-        $(".logOut").click(function(){
-            $(".loginBefore").hide()
-            $(".loginAfter").show()  
-        });
-    } 
-    
+    localStorage.setItem('jsessionid','');
+    $(".loginBefore").hide()
+    $(".loginAfter").show()  
 }
 
 /*-------------------------------------------------*/
@@ -117,10 +107,12 @@ function fnLogin() {
     }
     //在这里使用Ajax请求
     $.postExtend(loginUrl, params, function(data){
+        console.log(data.data);
         if(data.code == 0){
-            //
-            isLogin = true;
-            jsessionid = data.jsessionid;
+            //使用sessionStorage存储jsession数据
+            var dataParams = JSON.parse(data.data);
+            console.log("登录数据 Jsessionid = " + dataParams.jsessionid);
+            localStorage .setItem('jsessionid',dataParams.jsessionid);
             //这些操作可以使用一个函数总结起来。
             $("#login").hide();
             $(".loginBefore").show();
@@ -190,15 +182,16 @@ function fnregister() {
     //在这里使用Ajax请求
     $.postExtend(registerUrl, params, function(data){
         if(data.code == 0){
+            var dataParams = JSON.parse(data.data);
+            console.log("注册数据 Jsessionid = " + dataParams.jsessionid);
+            localStorage .setItem('jsessionid',dataParams.jsessionid);
             //隐藏部分操作
            $("#register").hide();
            $(".loginBefore").show();
            $(".right").hide();
            $(".loginAfter").hide();  
-           console.log("注册成功！")
            window.alert("注册成功！")
         }else{
-            console.log("登录失败！" + data.message)
             window.alert("登录失败！" + data.message)
         }
     });
@@ -399,6 +392,42 @@ $(document).ready(function(){
 //进入网页调用该接口获取套餐信息
 $(
     function(){
+        //获取H5存储的session值
+        var jessionid= localStorage.getItem('jsessionid');
+        console.log(jessionid)
+        var params = {
+            jessionid:jessionid
+        }
+        //判断用户是否登录
+        $.postExtend(getUserBySessionIdUrl,params,function(data){
+            console.log(data);
+            if(data.code == 0){
+                var dataParams = JSON.parse(data.data);
+                //修改H5存储的数据
+                localStorage .setItem('jsessionid',dataParams.jsessionid);
+                //处理登录的样式内容（隐藏登录注册内容）
+                //初始页面时没有该内容，如何进行隐藏。
+                // window.onload = function(){
+                //     $("#login").hide();
+                //     $(".loginBefore").show();
+                //     $(".loginAfter").hide();
+                // }
+                $(document).ready(function(){
+                    $("#login").hide();
+                    $(".loginBefore").show();
+                    $(".loginAfter").hide();
+                  });
+            }else if(data.code == 7 ){
+                //修改H5存储数据
+                localStorage .setItem('jsessionid',null);
+                window.alert(data.message);
+            }else{
+                //修改H5存储数据
+                sessionStorage.setItem('jsessionid',null);
+            }
+        })
+        
+
         $.postExtend(getAllMedicalItemsUrl,{},function(data){
             if(data.code == 0 ){
                 var json = JSON.parse(data.data);

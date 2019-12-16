@@ -71,7 +71,7 @@ jQuery.extend({
 		//显示加载动画
 		$.showLoading();
 		//拼接jsessionid
-		params.jsessionid = jsessionid;
+		params.jsessionid = localStorage.getItem('jsessionid');
 		jQuery.post(url,params,function(data){
 			//隐藏加载动画
 			$.hideLoading();
