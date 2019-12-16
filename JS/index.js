@@ -159,7 +159,7 @@ function fnregister() {
 
 /*  这里得校验方式需要修改修改
     后台得校验方式为：账号需要电话号码、密码需要6-11位字母与数字组成*/
-    if(phone != /^(((1[3456789][0-9]{1})|(15[0-9]{1}))+\d{8})$/){
+    if(!/^(((1[3456789][0-9]{1})|(15[0-9]{1}))+\d{8})$/.test(phone.value)){
         oError.innerHTML = "账号输入不正确"
         isError = false;
         return;
@@ -173,8 +173,7 @@ function fnregister() {
 
     //这里定义params,这里的密码不需要进行加密处理，因为我后台自己搞了加密解密比对方法。
     var params = {
-        //gender:(".usex").val,
-        //前面取值不对，现在使用测试值调试接口
+        //注册时默认选择男性
         gender:"Male",
         password:pass.value,
         phone:phone.value
@@ -345,11 +344,9 @@ $(
         //获取H5存储的session值
         var jessionid= localStorage.getItem('jsessionid');
         console.log(jessionid)
-        var params = {
-            jessionid:jessionid
-        }
         //判断用户是否登录
         if(jessionid != "" ){
+            var params = { jessionid:jessionid }
             $.postExtend(getUserBySessionIdUrl,params,function(data){
                 console.log(data);
                 if(data.code == 0){
