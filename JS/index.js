@@ -333,56 +333,6 @@ $("#lunbobox ul li,.lunbo a img,#toright,#toleft ").hover(//鼠标移进  移出
         }
 })
 
-/*-------------------------------------------------*/
-
-/*套餐信息*/
-$(".news").hide();
-$(document).ready(function(){
-    $("#sideNavUl").mouseover(function (){
-        $(".news").show();
-    }).mouseout(function (){
-        $(".news").hide();
-    });
-});
-
-
-/*-------------------------------------------------*/
-
-/*体检记录*/
-$(function () {
-    $("#btn").click(function () {
-        var $sea=$('#txt').val();
-        //先隐藏全部，再把符合筛选条件的值显示
-        $('table tbody tr').hide().filter(':contains('+$sea+')').show();
-    });
-});
-$(document).ready(function(){
-    $(".medicalRecord").click(function(){
-        $("#medicalRecord").show();
-        $("#myCarousel").hide()
-        $("#firstScreen").hide()
-        $("#introduce").hide()
-        $("#contact").hide()
-    });
-    $(".firstScreen").click(function(){
-        $("#medicalRecord").hide();
-        $("#myCarousel").show()
-        $("#firstScreen").show()
-        $("#introduce").show()
-        $("#contact").show()
-    });
-    $(".main").click(function(){
-        $("#medicalRecord").hide();
-        $("#myCarousel").show()
-        $("#firstScreen").show()
-        $("#introduce").show()
-        $("#contact").show()
-    });
-    $("#txt").click(function(){
-        $(".ico").hide()
-    });
-});
-
 //套餐数据，需要将以下数据添加到静态页面中(其中 showImg 使用，myUrl + /service/rest/tk.File/fc507b71dab54d678ca610c20655a7ea)
 /*[
     {\"suitableSex\":\"两者都\",\"ageMin\":16,\"ageMax\":100,\"createTime\":\"2019-11-23 13:06\",\"meaning\":\"通过仪器测量人体基本健康指标。例如：血压是否正常，有无体重偏低、超重或肥胖。\",\"medicalName\":\"一般检查A\",\"id\":\"fc073ea338f542b6a17d4ecdb5023e36\",\"items\":\"体重\",\"showImg\":\"b8c80b4f26cd4c1599644b19adc28db4\",\"isShow\":null},
@@ -462,3 +412,53 @@ $(
         })
     }
 )
+
+/*-------------------------------------------------*/
+
+/*套餐信息*/
+$(".news").hide();
+$(document).ready(function(){
+    $("#sideNavUl").mouseover(function (){
+        $(".news").show();
+    }).mouseout(function (){
+        $(".news").hide();
+    });
+});
+
+
+/*-------------------------------------------------*/
+
+/*体检记录*/
+$(function () {
+    $("#btn").click(function () {
+        var $sea=$('#txt').val();
+        //先隐藏全部，再把符合筛选条件的值显示
+        $('table tbody tr').hide().filter(':contains('+$sea+')').show();
+    });
+});
+$(document).ready(function(){
+    $(".medicalRecord").click(function(){
+        $("#medicalRecord").show();
+        $("#myCarousel").hide()
+        $("#firstScreen").hide()
+        $("#introduce").hide()
+        $("#contact").hide()
+    });
+    $(".firstScreen").click(function(){
+        $("#medicalRecord").hide();
+        $("#myCarousel").show()
+        $("#firstScreen").show()
+        $("#introduce").show()
+        $("#contact").show()
+    });
+    $(".main").click(function(){
+        $("#medicalRecord").hide();
+        $("#myCarousel").show()
+        $("#firstScreen").show()
+        $("#introduce").show()
+        $("#contact").show()
+    });
+    $("#txt").click(function(){
+        $(".ico").hide()
+    });
+});

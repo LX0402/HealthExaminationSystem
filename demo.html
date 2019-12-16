@@ -4,54 +4,337 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         <style type="text/css">
-        li {
-            display: inline-block;
-            width: 100%;
-            height: 30px;
-            line-height: 30px;
-        }
+              .hide {
+    display: none;
+}
  
-        li:active{
-            background: #dddddd;
-            color: red;
-        }
+.header-top {
+    width: 100%;
+    height: 30px;
+    background-color: #2F3030;
+}
+ 
+.header-safe {
+    max-width: 1920px;
+    min-width: 1200px;
+    height: 30px;
+    background-color: #2F3030;
+    margin: 0 auto;
+}
+ 
+.header-content {
+    width: 1200px;
+    height: 30px;
+    background-color: #2F3030;
+    margin: 0 auto;
+}
+ 
+.header-content .info {
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 30px;
+}
+ 
+.header-content .login-reg,
+.header-content .login-reg a {
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 30px;
+}
+ 
+.header-bottom {
+    width: 100%;
+    height: 135px;
+}
+ 
+.header-safety {
+    max-width: 1920px;
+    min-width: 1200px;
+    height: 135px;
+    margin: 0 auto;
+}
+ 
+.header-logo {
+    width: 1200px;
+    height: 135px;
+    margin: 0 auto;
+}
+ 
+.search {
+    margin-top: 55px;
+}
+ 
+.search .select {
+    line-height: 30px;
+    margin-right: 20px;
+}
+ 
+.search select {
+    border: 0;
+    color: #2F3030;
+    font-size: 16px;
+    width: auto;
+    padding: 0 2%;
+    margin: 0;
+    text-align: center;
+    text-align-last: center;
+}
+ 
+.sousuo {
+    position: relative;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #CACACA;
+    border-radius: 5px;
+}
+ 
+.sousuo input {
+    width: 252px;
+    height: 30px;
+    border: 0;
+    border-radius: 5px;
+    margin-left: 22px;
+}
+ 
+.sousuo .search-btn {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 26px;
+    height: 26px;
+    border-radius: 5px;
+    background-color: #EC6D3A;
+}
+ 
+.banner {
+    width: 100%;
+    height: 375px;
+}
+ 
+.banner-safe {
+    position: relative;
+    max-width: 1920px;
+    min-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+ 
+.banner-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    z-index: -99;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-filter: blur(6px);
+    -moz-filter: blur(6px);
+    -o-filter: blur(6px);
+    -ms-filter: blur(6px);
+    filter: blur(6px);
+}
+ 
+.baner-content {
+    position: relative;
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+ 
+.baner-content .swiper-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+ 
+.baner-content .swiper-container .swiper-slide img {
+    width: 100%;
+    height: 100%;
+}
+ 
+.baner-content .pagination {
+    position: absolute;
+    bottom: 19px;
+    left: 48%;
+}
+ 
+.baner-content .swiper-pagination-switch {
+    display: inline-block;
+    width: 32px;
+    height: 3px;
+    margin-right: 14px;
+    cursor: pointer;
+    background-color: #fff;
+}
+ 
+.baner-content .swiper-active-switch {
+    background: #EC6D3A;
+}
+ 
+.baner-content .tab {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, .4);
+    color: #FFFFFF;
+}
+ 
+.baner-content .tab span {
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+ 
+.baner-content .tab li {
+    cursor: pointer;
+    height: 74px;
+    line-height: 74px;
+    padding: 0 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    border-right: 1px solid rgba(255, 255, 255, .5);
+}
+ 
+.baner-content .tab li:last-child {
+    border-bottom: 0;
+}
+ 
+.baner-content .tab li a {
+    font-size: 16px;
+    color: #fff;
+    margin-right: 20px;
+    border-bottom: 1px solid transparent;
+}
+ 
+.baner-content .tab li a:hover {
+    border-bottom: 1px solid #fff;
+}
+ 
+.baner-content .tab .list {
+    width: 300px;
+    padding: 20px;
+    top: 0;
+    line-height: 30px;
+}
+ 
+.baner-content .tab .list a {
+    font-size: 16px;
+    color: #fff;
+    border-bottom: 1px solid transparent;
+    margin-right: 14px;
+}
+ 
+.baner-content .tab .list a:hover {
+    border-bottom: 1px solid #fff;
+}
+ 
+.baner-content .tab .more {
+    cursor: pointer;
+}
     </style>
 
 </head>
 <body>
-    <p><input type="text" placeholder="请输入查询对象" autofocus  id="searchText"/></p>
-        <p><input type="button" id="action" value="提交"/></p>
-        <p><select id="selections">
- 
-        </select></p>
+    <div class="banner">
+        <div class="banner-safe">
+            <div class="banner-bg">
+            </div>
+            <div class="baner-content">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="images/index1.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/index2.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/index3.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="pagination"></div>
+                </div>
+                <div class="tab clearfix">
+                    <ul class="f-left">
+                        <li><span>国学</span><a href="">摄影</a><a href="">唱歌</a><i class="layui-icon" style="font-size: 16px; color: #fff;">&#xe602;</i> </li>
+                        <li><span>国学</span><a href="">摄影</a><a href="">唱歌</a><i class="layui-icon" style="font-size: 16px; color: #fff;">&#xe602;</i> </li>
+                        <li><span>国学</span><a href="">摄影</a><a href="">唱歌</a><i class="layui-icon" style="font-size: 16px; color: #fff;">&#xe602;</i> </li>
+                        <li><span>国学</span><a href="">摄影</a><a href="">唱歌</a><i class="layui-icon" style="font-size: 16px; color: #fff;">&#xe602;</i> </li>
+                        <li><span>国学2</span><a href="">摄影</a><a href="">唱歌</a><i class="layui-icon" style="font-size: 16px; color: #fff;">&#xe602;</i> </li>
+                        <div class="more">
+                            <div class="gengduo hide" style="height:74px;line-height:74px;font-size:20px;text-align:center;border-right:1px solid rgba(255, 255, 255, .5);">更多<i class="layui-icon" style="font-size: 16px; color: #fff;">&#xe61a;</i>
+                            </div>
+                            <ul class="hide">
+                                <li><span>国学</span><a href="">摄影</a><a href="">唱歌</a><i class="layui-icon" style="font-size: 16px; color: #fff;">&#xe602;</i> </li>
+                                <li><span>国学</span><a href="">摄影</a><a href="">唱歌</a><i class="layui-icon" style="font-size: 16px; color: #fff;">&#xe602;</i> </li>
+                            </ul>
+                        </div>
+                    </ul>
+                    <div class="list hide f-left">
+                        <a href="">国学1</a>
+                        <a href="">国学2</a>
+                        <a href="">国学3</a>
+                        <a href="">国学4</a>
+                        <a href="">国学5</a>
+                        <a href="">国学6</a>
+                        <a href="">国学7</a>
+                        <a href="">国学8</a>
+                        <a href="">国学9</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
         <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script type="text/javascript">
-			window.onload = function(){
-                    //获取文本框对象
-                    var searchText = document.getElementById("searchText");
-                    //获取提交button对象
-                    var action = document.getElementById("action");
-                    //获取要增加到的下拉列表对象
-                    var selections = document.getElementById("selections");
-                    //点击提交的时候执行的方法
-                    action.onclick = function(){
-                        //如果文本框对象中值不为空
-                        if(searchText.value ){
-                            //根据文本框中的值循环5次
-                            for(var i =5;i>0;i--){
-                                //设置下拉列表中的值的属性
-                                var option = document.createElement("option");
-                                    option.value = searchText.value + i;
-                                    option.text= searchText.value+i;
-                                //将option增加到下拉列表中。
-                                selections.options.add(option);
-                            }
-                        }
-                    }
-                }
+			var bg1 = $('.baner-content .swiper-container .swiper-slide').eq(0).children('img').attr('src');
+    $('.banner-bg').css("background-image", "url(" + bg1 + ")");
+    var mySwiper = new Swiper('.baner-content .swiper-container', {
+        pagination: '.baner-content .pagination',
+        paginationClickable: true,
+        moveStartThreshold: 100,
+        autoplay: 1500,
+        loop: true,
+        onSlideChangeEnd: function(swiper) {
+            bg();
+        }
+    })
+ 
+    function bg() {
+        var bg = $('.baner-content .swiper-slide-active').children('img').attr('src');
+        $('.banner-bg').css("background-image", "url(" + bg + ")");
+    }
+    var height = $('.tab').height();
+    var height2 = 75 * $('.tab .more li').length;
+    $('.baner-content .tab .list').css('height', height - 41 + 'px');
+    $('.tab').mouseover(function(event) {
+        $('.baner-content .tab .list').show();
+    });
+    if ($('.tab li').length > 5) {
+        $('.tab .gengduo').show();
+        $('.tab>ul li:nth-child(5)').remove();
+    }
+    $('.tab .more').mouseenter(function(event) {
+        if ($('#remove').length === 0) {
+            $('.tab .more li:first-child').before('<li id="remove"><span>国学2</span><a href="">摄影</a><a href="">唱歌</a><i class="layui-icon" style="font-size: 16px; color: #fff;">&#xe602;</i> </li>');
+        }
+        $('.tab .more>ul').show();
+        $('.tab .gengduo').hide();
+        // $('.baner-content .tab .list').css('left', width2 + 'px');
+        $('.baner-content .tab .list').css('height', height + height2 - 41 + 'px');
+    });
+    $('.tab').mouseleave(function(event) {
+        $('.baner-content .tab .list').hide();
+        $('.tab .gengduo').show();
+        $('.tab .more>ul').hide();
+        // $('.baner-content .tab .list').css('left', width + 'px');
+        $('.baner-content .tab .list').css('height', height - 41 + 'px');
+    });
+
 		</script>
     </body>
 </html>
