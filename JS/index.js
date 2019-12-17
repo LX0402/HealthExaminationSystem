@@ -11,7 +11,7 @@ function fnLogOut(){
 
 /*-------------------------------------------------*/
 
-/*轮播图*/
+/*轮播图01*/
 $("#myCarousel").carousel('cycle');
 $("#myCarousel-second").carousel('cycle');
 
@@ -226,112 +226,27 @@ $(function() {
     })
 })
 
-var t;
-var index = 0;
-//自动播放
-t = setInterval(play, 3000)
+/*-------------------------------------------------*/
 
-function play() {
-    index++;
-    if (index > 4) {
-        index = 0
-    }
-    $("#lunbobox ul li").eq(index).css({
-        "background": "#999",
-        "border": "1px solid #ffffff"
-    }).siblings().css({
-        "background": "#cccccc",
-        "border": ""
-    })
+/*轮播图02*/
+$("#myCarousela").carousel('cycle');
+$("#myCarousela-second").carousel('cycle');
 
-    $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000);
-};
-
-$("#lunbobox ul li").click(function() {//点击鼠标 图片切换
-
-    //添加 移除样式
-    //$(this).addClass("lito").siblings().removeClass("lito"); //给当前鼠标移动到的li增加样式 且其余兄弟元素移除样式   可以在样式中 用hover 来对li 实现
-    $(this).css({
-        "background": "#999",
-        "border": "1px solid #ffffff"
-    }).siblings().css({
-        "background": "#cccccc"
-    })
-    var index = $(this).index(); //获取索引 图片索引与按钮的索引是一一对应的
-
-    $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000); // siblings  找到 兄弟节点(不包括自己）
+$('.btn[type="submit"]').click(function(e) {
+    e.preventDefault();
 });
+var delay = 5000;
+var itemCount = 5;
+var area = $("#roll");
+var speed = 3;
+area.html(area.html() + area.html());
 
-$("#toleft").click(function() {//上一张、下一张切换
-    index--;
-    if (index <= 0) //判断index<0的情况为：开始点击#toright  index=0时  再点击 #toleft 为负数了 会出错
-    {
-        index = 4
+setInterval(async function() {
+    await area.animate( {scrollTop:area.scrollTop() + area.height()}, 1000 / speed);
+    if(area.scrollTop() >= area.height() * itemCount) {
+        area.scrollTop(0);
     }
-    console.log(index);
-    $("#lunbobox ul li").eq(index).css({
-        "background": "#999",
-        "border": "1px solid #ffffff"
-    }).siblings().css({
-        "background": "#cccccc"
-    })
-
-    $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000); // siblings  找到 兄弟节点(不包括自己）必须要写，$("#imgbox a ")获取到的是一个数组集合 。所以可以用index来控制切换
-}); 
-
-$("#toright").click(function() {
-    index++;
-    if (index > 4) {
-        index = 0
-    }
-    console.log(index);
-    $(this).css({
-        "opacity": "0.5"
-    })
-    $("#lunbobox ul li").eq(index).css({
-        "background": "#999",
-        "border": "1px solid #ffffff"
-    }).siblings().css({
-        "background": "#cccccc"
-    })
-    $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000); // siblings  找到 兄弟节点(不包括自己）
-});
-$("#toleft,#toright").hover(function() {
-        $(this).css({
-            "color": "black"
-        })
-    },
-    function() {
-        $(this).css({
-            "opacity": "0.3",
-            "color": ""
-        })
-    })
-
-$("#lunbobox ul li,.lunbo a img,#toright,#toleft ").hover(//鼠标移进  移出
-    function() {//鼠标移进
-        $('#toright,#toleft').show()
-        clearInterval(t);
-
-    },
-    function() {//鼠标移开
-        t = setInterval(play, 3000)
-
-        function play() {
-            index++;
-            if (index > 4) {
-                index = 0
-            }
-            $("#lunbobox ul li").eq(index).css({
-                "background": "#999",
-                "border": "1px solid #ffffff"
-            }).siblings().css({
-                "background": "#cccccc"
-            })
-            $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000);
-        }
-})
-
+}, delay);
 //套餐数据，需要将以下数据添加到静态页面中(其中 showImg 使用，myUrl + /service/rest/tk.File/fc507b71dab54d678ca610c20655a7ea)
 /*[
     {\"suitableSex\":\"两者都\",\"ageMin\":16,\"ageMax\":100,\"createTime\":\"2019-11-23 13:06\",\"meaning\":\"通过仪器测量人体基本健康指标。例如：血压是否正常，有无体重偏低、超重或肥胖。\",\"medicalName\":\"一般检查A\",\"id\":\"fc073ea338f542b6a17d4ecdb5023e36\",\"items\":\"体重\",\"showImg\":\"b8c80b4f26cd4c1599644b19adc28db4\",\"isShow\":null},
@@ -377,9 +292,10 @@ $(
                     console.log(itemCount);
                     /*加载导航栏数据*/
                     $("#sideNavUl").append("<li class='combo'>"+itemCount.medicalName+"<span class='iconfont fr'>&#xe63d;</span> </li>");
-                    $("#content1").append("<div id='new"+index+"' class='panel'>"+itemCount.medicalName+"</div>");
+                    $(".item").append("<div class='captiona"+index+"' class='panel'>"+itemCount.medicalName+"</div>");
                     //加载图片(如果后台没有给出图片，你就要使用默认图片)
-                    $("#lunboDiv").append("<a href='javascript:void(0)'><img src='"+myUrl+"/service/rest/tk.File/"+itemCount.showImg+"'></a>");
+                    $("#lunboBox").append("<div class='item'><img alt='slide' src='"+myUrl+"/service/rest/tk.File/"+itemCount.showImg+"'></div>");
+                    /*
                     //添加active
                     onload = function () {
                         function removeActiveClass(node) {
@@ -391,14 +307,17 @@ $(
                             var target = e.target;
                             target.className = 'li-active';
                         }
-                    }
-                    /*对应显示*/
+                    }*/
+                    /*对应显示
+                    $(window).on('load',function(){
+                        $("#content1>div").eq(0).show().siblings().hide();
+                    })
                     $("#sideNavUl").find("li").mouseover(function () {
                         $(this).addClass("li-active").siblings().removeClass("li-active");
                         var index = $(this).index();
-                        $("#content1>div").eq(index).show().siblings().hide();
+                        $("#lunboBox>div").eq(index).show().siblings().hide();
 
-                    })
+                    })*/
                 });
             }else{
                 console.log("获取数据失败！");
