@@ -296,13 +296,13 @@ $(
                         //第一个添加active类
                         $("#lunboBox").append("<div class='item active'>"+
                                                     "<div class='contentDiv' style='width: 1010px; height: 550px; background-size: 100% 100%; background-repeat: no-repeat; background-image: url("+myUrl+"/service/rest/tk.File/"+itemCount.showImg+");'>"+
-                                                            "<div class='xxxstyle'>"+itemCount.medicalName+"</div>"+
+                                                            "<div class='verbalContent'>"+itemCount.medicalName+"</div>"+
                                                     "</div>"+
                                                 "</div>");
                     }else{
                         $("#lunboBox").append("<div class='item'>"+
                                                     "<div class='contentDiv' style='width: 1010px; height: 550px; background-size: 100% 100%; background-repeat: no-repeat; background-image: url("+myUrl+"/service/rest/tk.File/"+itemCount.showImg+");'>"+
-                                                            "<div class='xxxstyle'>"+itemCount.medicalName+"</div>"+
+                                                            "<div class='verbalContent'>"+itemCount.medicalName+"</div>"+
                                                     "</div>"+
                                                 "</div>");
                     }
@@ -313,30 +313,16 @@ $(
                     }else{
                         $("#myCarousela ol").append("<li data-target='#myCarousela' data-slide-to='"+index+"'></li>");
                     }
-                    /*
-                    //添加active
-                    onload = function () {
-                        function removeActiveClass(node) {
-                            node.className = '';
-                        }
 
-                        document.querySelector('ul[id=sideNavUl]').onmouseover = function (e) {
-                            Array.prototype.forEach.call(document.querySelectorAll('ul[id=sideNavUl] > li'), removeActiveClass);
-                            var target = e.target;
-                            target.className = 'li-active';
-                        }
-                    }*/
-                    /*对应显示
-                    $(window).on('load',function(){
-                        $("#content1>div").eq(0).show().siblings().hide();
-                    })
+                    /*对应显示*/
                     $("#sideNavUl").find("li").mouseover(function () {
-                        $(this).addClass("li-active").siblings().removeClass("li-active");
+                        $(this).addClass("active").siblings().removeClass("active");
                         var index = $(this).index();
                         $("#lunboBox>div").eq(index).show().siblings().hide();
 
-                    })*/
+                    })
                 });
+
                 //计算导航栏个数
                 console.log(json.length);
                 console.log($(".sideNav").height());
@@ -352,19 +338,6 @@ $(
         })
     }
 )
-
-/*-------------------------------------------------*/
-
-/*套餐信息*/
-$(".news").hide();
-$(document).ready(function(){
-    $("#sideNavUl").mouseover(function (){
-        $(".news").show();
-    }).mouseout(function (){
-        $(".news").hide();
-    });
-});
-
 
 /*-------------------------------------------------*/
 
