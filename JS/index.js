@@ -292,7 +292,7 @@ $(
                     console.log(itemCount);
                     /*加载导航栏数据*/
                     $("#sideNavUl").append("<li class='combo'>"+itemCount.medicalName+"<span class='iconfont fr'>&#xe63d;</span> </li>");
-                    $(".item").append("<div class='captiona"+index+"' class='panel'>"+itemCount.medicalName+"</div>");
+                    $("#lunboBox>.item").append("<div class='captiona"+index+"' class='panel'>"+itemCount.medicalName+"</div>");
                     //加载图片(如果后台没有给出图片，你就要使用默认图片)
                     $("#lunboBox").append("<div class='item'><img alt='slide' src='"+myUrl+"/service/rest/tk.File/"+itemCount.showImg+"'></div>");
                     /*
