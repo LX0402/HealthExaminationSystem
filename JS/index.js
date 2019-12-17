@@ -42,9 +42,7 @@ $(document).ready(function(){
     $(".iconfont").click(function(){
         $("#appointment").hide();
     });
-    $("#startTime").click(function(){
-        $(".dropdown-menu").hide();
-    });
+
 });
 function fnAppointment() {
     var age = document.getElementById("age")
@@ -343,6 +341,13 @@ $(
 
 /*体检记录*/
 $(function () {
+
+    $('#appointment').datetimepicker({
+        format: 'YYYY-MM-DD',
+        locale: moment.locale('zh-cn')
+    });
+
+
     $("#btn").click(function () {
         var $sea=$('#txt').val();
         //先隐藏全部，再把符合筛选条件的值显示
