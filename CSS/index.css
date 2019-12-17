@@ -186,6 +186,7 @@ body{
 }
 #appointment .input_box3 select{
     color: #4b4848;
+    text-indent: 5px;
     margin: -2px 0;
 }
 #appointment .input-group{
