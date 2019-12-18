@@ -327,28 +327,6 @@ $(
                     sessionStorage.setItem('jsessionid','');
                 }
             });
-
-            /* 获取并加载数据 */
-            $.postExtend(queryReservationRecordUrl,{},function(data){
-                if(data.code == 0){
-                    var json = JSON.parse(data.data);
-                    json.forEach(function(itemCount,index){
-                        console.log(itemCount);
-                        // 像表格中添加数据
-                        $("#tableContent").append("<tr> "+
-                            "<td>"+itemCount.userName+"</td>"+
-                            "<td>"+itemCount.medicalName+"</td>"+
-                            "<td>"+itemCount.meidicalContent+"</td>"+
-                            "<td>"+itemCount.meaning+"</td>"+
-                            "<td>"+itemCount.reservationTime+"</td>"+
-                            "</tr>"
-                        );
-                    });
-                }else{
-                    window.alert(data.message)
-                }
-            });
-
         }
 
         $.postExtend(getAllMedicalItemsUrl,{},function(data){
@@ -428,6 +406,28 @@ $(document).ready(function(){
 
     /* 导航栏预约记录点击事件 */
     $(".medicalRecord").click(function(){
+        //先去除已经拼接的数据
+        $("#tableContent").html("");
+        /* 获取并加载数据 */
+        $.postExtend(queryReservationRecordUrl,{},function(data){
+            if(data.code == 0){
+                var json = JSON.parse(data.data);
+                json.forEach(function(itemCount,index){
+                    console.log(itemCount);
+                    // 像表格中添加数据
+                    $("#tableContent").append("<tr> "+
+                        "<td>"+itemCount.userName+"</td>"+
+                        "<td>"+itemCount.medicalName+"</td>"+
+                        "<td>"+itemCount.meidicalContent+"</td>"+
+                        "<td>"+itemCount.meaning+"</td>"+
+                        "<td>"+itemCount.reservationTime+"</td>"+
+                        "</tr>"
+                    );
+                });
+            }else{
+                window.alert(data.message)
+            }
+        });
         $("#medicalRecord").show();
         $("#myCarousel").hide()
         $("#firstScreen").hide()
