@@ -35,7 +35,6 @@ setInterval(async function() {
 
 /*预约*/
 $("#appointment").hide()
-$(".bootstrap-datetimepicker-widget").show()
 $(document).ready(function(){
     $('#appointment').datetimepicker({
         format: 'YYYY-MM-DD',
@@ -47,7 +46,7 @@ $(document).ready(function(){
     $(".iconfont").click(function(){
         $("#appointment").hide();
     });
-
+    
 });
 function fnAppointment() {
     var province = document.getElementById("province")
@@ -374,6 +373,7 @@ $(
                                                     "</div>"+
                                                 "</div>");
                     }
+
                     //添加点
                     if(index == 0 ){
                         //第一个添加active类
@@ -381,13 +381,14 @@ $(
                     }else{
                         $("#myCarousela ol").append("<li data-target='#myCarousela' data-slide-to='"+index+"'></li>");
                     }
-
+                    
                     /*对应显示*/
+                    $("#myCarousela").carousel('cycle');
+
                     $("#sideNavUl").find("li").mouseover(function () {
                         $(this).addClass("active").siblings().removeClass("active");
                         var index = $(this).index();
-                        $("#lunboBox>div").eq(index).show().siblings().hide();
-
+                        $("#myCarousela").carousel(index)
                     })
 
                     // 加载预约套餐form表单中的套餐下拉款
