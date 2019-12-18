@@ -6,7 +6,7 @@ $("#medicalRecord").hide();
 function fnLogOut(){
     localStorage.setItem('jsessionid','');
     $(".loginBefore").hide()
-    $(".loginAfter").show()  
+    $(".loginAfter").show()
 }
 
 /*-------------------------------------------------*/
@@ -32,12 +32,11 @@ setInterval(async function() {
 }, delay);
 
 /*-------------------------------------------------*/
-
 /*预约*/
 $("#appointment").hide()
 $(".bootstrap-datetimepicker-widget").show()
 $(document).ready(function(){
-    $('#appointment').datetimepicker({
+    $('#startTime').datetimepicker({
         format: 'YYYY-MM-DD',
         locale: moment.locale('zh-cn')
     });
@@ -108,7 +107,7 @@ function fnLogin() {
     var pass = document.getElementById("pass")
     var oError = document.getElementById("error_box")
     var isError = true;
-  
+
     if(!/^1[34578]\d{9}$/.test(name.value)){
         oError.innerHTML = "账号输入不正确"
         isError = false;
@@ -137,7 +136,7 @@ function fnLogin() {
             $(".loginBefore").show();
             $(".loginAfter").hide();
             //这里可以弄一个提醒登录成功，然后等 一秒或者点击登录成功得时候再跳页面。
-            console.log("登录成功！")    
+            console.log("登录成功！")
             //仅用于测试
             window.alert("登录成功！");
         }else{
@@ -150,7 +149,7 @@ function fnLogin() {
         }
     });
 
-    
+
 }
 
 /*-------------------------------------------------*/
@@ -207,7 +206,7 @@ function fnregister() {
            $("#register").hide();
            $(".loginBefore").show();
            $(".right").hide();
-           $(".loginAfter").hide();  
+           $(".loginAfter").hide();
            window.alert("注册成功！")
         }else{
             window.alert("登录失败！" + data.message)
@@ -278,7 +277,6 @@ $(function() {
 /*-------------------------------------------------*/
 
 /*轮播图02*/
-$("#myCarousela").carousel('cycle');
 $("#myCarousela-second").carousel('cycle');
 
 $('.btn[type="submit"]').click(function(e) {
@@ -305,7 +303,7 @@ $(
         var jessionid= localStorage.getItem('jsessionid');
         console.log(jessionid)
         //判断用户是否登录
-        if(jessionid != "" ){
+        if(jessionid != ""){
             var params = { jessionid:jessionid }
             $.postExtend(getUserBySessionIdUrl,params,function(data){
                 console.log(data);
@@ -360,12 +358,13 @@ $(
                         $("#myCarousela ol").append("<li data-target='#myCarousela' data-slide-to='"+index+"'></li>");
                     }
 
+                    $("#myCarousela").carousel('cycle');
+
                     /*对应显示*/
                     $("#sideNavUl").find("li").mouseover(function () {
                         $(this).addClass("active").siblings().removeClass("active");
                         var index = $(this).index();
-                        $("#lunboBox>div").eq(index).show().siblings().hide();
-
+                        $("#myCarousela").carousel(index)
                     })
 
                     // 加载预约套餐form表单中的套餐下拉款
@@ -380,7 +379,7 @@ $(
                 $(".combo").css({height:i});
                 //错误内容，需求：导航栏文字居中对齐
                 $("#sideNavUl li").attr("line-height",i);
-                 
+
             }else{
                 console.log("获取数据失败！");
             }
