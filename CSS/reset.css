@@ -79,7 +79,7 @@ body{
 }
 
 /*颜色*/
-.f1{
+.fs1{
     font-size: 12px;
 }
 .c1{
@@ -87,4 +87,34 @@ body{
 }
 .c2{
     color: #fc84e8;
+}
+
+/*共同表单样式*/
+.close{
+    margin: 5% 5%;
+    cursor:pointer;
+    color: #052DDD;
+}
+.typeface{/*字体*/
+    font-weight: bolder;
+    color: #fc84e8;
+    line-height: 35px;
+}
+.higth1{
+    height: 35px;
+}
+.textI{
+    text-indent: 3px;
+}
+.inputBox{
+    color: #000;
+    background-color: rgba(255, 255, 255,-0.4);
+    border: none;
+    border-bottom: 3px solid #48b7d9;
+}
+.bton{
+    color: #fff;
+    border-radius: 20px 20px 20px 20px;
+    outline: none;
+    border: none;
 }

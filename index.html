@@ -35,19 +35,19 @@
             <!--登录-->
             <form id="login" class="box" method="get" action="">
                 <span class="iconfont close fr">&#xe6a1;</span>
-                <div class="input_box1">
+                <div class="input_box1 higth1 typeface">
                     <span>手机号：</span>
-                    <input id="name" type="text" name="user">
+                    <input id="name" class="higth1 textI inputBox" type="text" name="user">
                 </div>
-                <div class="input_box2">
+                <div class="input_box2 higth1 typeface">
                     <span>密&nbsp; &nbsp;码：</span>
-                    <input id="pass" type="password" name="psw">
+                    <input id="pass" class="higth1 textI inputBox" type="password" name="psw">
                 </div>
                 <div id="error_box"><br></div>
                 <div class="input_box">
-                    <button type="button" class="btn btn-info primary" onclick="fnLogin()">登录</button>    
+                    <button type="button" class="btn btn-info primary bton" onclick="fnLogin()">登录</button>    
                     <a class="register" href="#">
-                        <input type="button" class="btn btn-info info" name="register" value="注册">
+                        <input type="button" class="btn btn-info info bton" name="register" value="注册">
                     </a>
                 </div>
             </form>
@@ -55,18 +55,18 @@
             <!--注册-->
             <form id="register" class="box" method="get" action="">
                 <span class="iconfont close fr">&#xe6a1;</span>
-                <div class="input_box3">
+                <div class="input_box3 higth1 typeface">
                     <span class="p3">手机号：</span>
-                    <input id="tel" type="text" name="tel">
+                    <input id="tel" class="higth1 textI inputBox" type="text" name="tel">
                 </div>
-                <div class="input_box2">
+                <div class="input_box2 higth1 typeface">
                     <span class="p2">密&nbsp; &nbsp;码：</span>
-                    <input id="pass1" type="password" name="psw">
+                    <input id="pass1" class="higth1 textI inputBox" type="password" name="psw">
                 </div>
                 <div id="error_box1"><br></div>
                 <div class="input_box">  
                     <a href="#" onclick="fnregister()">
-                        <input type="button" class="btn btn-info" name="register"  value="注册">
+                        <input type="button" class="btn btn-info bton" name="register"  value="注册">
                     </a>
                 </div>
             </form>
@@ -102,43 +102,43 @@
             <!--预约-->
             <form id="appointment" class="box" role="form" >
                 <span class="iconfont close fr">&#xe6a1;</span>
-                <div class="input_box3">
-                    <span class="p3 fl">套餐类型：</span>
-                    <select id="province" name="province"></select>
+                <div class="input_box3 higth1">
+                    <span class="p3 typeface fl">套餐类型：</span>
+                    <select id="province" class="higth1 textI" name="province"></select>
                 </div>
-                <div class="input-group">
-                    <span class="p4">时&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间：</span>
-                    <input name="startTime" id="startTime" class="form-control date-picker"  type="text"  datepicker="date">
+                <div class="input-group higth1">
+                    <span class="p4 typeface">时&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间：</span>
+                    <input name="startTime" id="startTime" class="form-control date-picker higth1"  type="text"  datepicker="date">
                 </div>
                 <div id="error_box"><br></div>
                 <div class="input_box">
-                    <button type="button" class="btn btn-info" onclick="fnAppointment()">确定</button>    
+                    <button type="button" class="btn btn-info higth1 bton" onclick="fnAppointment()">确定</button>    
                 </div>
             </form>
 
             <!--修改信息-->
             <form id="personalInfo" class="box" role="form">
                 <span class="iconfont close fr">&#xe6a1;</span>
-                <div class="input_box3">
-                    <span class="p3">姓名：</span>
-                    <input id="nickname" type="text" name="nickname">
+                <div class="input_box2 higth1">
+                    <span class="p2 typeface">姓&nbsp;&nbsp;&nbsp;&nbsp;名：</span>
+                    <input id="nickname" class="higth1 textI inputBox" type="text" name="nickname">
                 </div>
                 <div class="input_box1">
-                    <span class="p1">性&nbsp;&nbsp;&nbsp;&nbsp;别：</span>
-                    <label><span class="iconfont c1 f1">&#xe603;男</span><input class="gender" type="radio" name="gender" checked ="checked" value="Male"></label>
-                    <label><span class="iconfont c2 f1">&#xe604;女</span><input class="gender" type="radio" name="gender" value="FeMale"></label>
+                    <span class="p1 typeface">性&nbsp;&nbsp;&nbsp;&nbsp;别：</span>
+                    <label><span class="iconfont c1 fs1">&#xe603;男</span><input class="gender" type="radio" name="gender" checked ="checked" value="Male"></label>
+                    <label><span class="iconfont c2 fs1">&#xe604;女</span><input class="gender" type="radio" name="gender" value="FeMale"></label>
                 </div>
                 <div class="input_box3">
-                    <span class="p3">手机号：</span>
-                    <input type="text" name="phone">
+                    <span class="p3 typeface">手机号：</span>
+                    <input  class="higth1 textI inputBox" type="text" name="phone">
                 </div>
                 <div class="input_box4">
-                    <span class="p4">身份证：</span>
-                    <input type="text" name="card">
+                    <span class="p4 typeface">身份证：</span>
+                    <input  class="higth1 textI inputBox" type="text" name="card">
                 </div>
                 <div id="error_box1"><br></div>
                 <div class="input_box">
-                    <button type="button" class="btn btn-info primary" onclick="savePersonalInfo()">确定</button>    
+                    <button type="button" class="btn btn-info primary bton" onclick="savePersonalInfo()">确定</button>    
                 </div>
             </form>
 
