@@ -36,7 +36,7 @@ body{
 /*-------------------------------------------------*/
 
 /*登录*/
-#login,#register,#appointment,#changeInformation{
+#login,#register,#appointment,#personalInfo{
     height: 365px;
     width: 500px;
     position: absolute;
@@ -47,7 +47,7 @@ body{
     z-index: 2001;
     top: 140px;
 }
-#login .close,#register .close,#appointment .close,#changeInformation .close{
+#login .close,#register .close,#appointment .close,#personalInfo .close{
     margin: 5% 5%;
     cursor:pointer;
     color: #052DDD;
@@ -208,27 +208,27 @@ body{
 /*-------------------------------------------------*/
 
 /*修改信息*/
-#changeInformation .input_box1 .p1,#changeInformation .input_box2 .p2,#changeInformation .input_box3 .p3,#changeInformation .input_box4 .p4{
+#personalInfo .input_box1 .p1,#personalInfo .input_box2 .p2,#personalInfo .input_box3 .p3,#personalInfo .input_box4 .p4{
     line-height: 33px;
     font-weight: bolder;
     margin-right: 5px;
     color: #fc84e8;
 }
-#changeInformation .input_box1{
+#personalInfo .input_box1{
     margin: 54px 153px 0 ;
 }
-#changeInformation .input_box1 .usex{
+#personalInfo .input_box1 .usex{
     vertical-align: middle;
     width: 40px;
     height: 33px;
 }
-#changeInformation .input_box2{
+#personalInfo .input_box2{
     height: 35px;
     width: 100px;
     box-sizing: border-box;
     margin: 8px 153px 25px ;
 }
-#changeInformation .input_box2 #age,#changeInformation .input_box3 #tel,#changeInformation .input_box4 #card{
+#personalInfo .input_box2 #age,#personalInfo .input_box3 #tel,#personalInfo .input_box4 #card{
     position: absolute;
     height: 35px;
     text-indent: 3px;
@@ -238,18 +238,18 @@ body{
     border-bottom: 3px solid #48b7d9;
     outline: none;
 }
-#changeInformation .input_box3{
+#personalInfo .input_box3{
     margin: 0 153px 0;
 }
-#changeInformation .input_box4{
+#personalInfo .input_box4{
     margin: 30px 153px 0;
 }
 }
-#changeInformation .input_box4 #card{
+#personalInfo .input_box4 #card{
     margin: 30px 5px 0;
     position: absolute;
 }
-#changeInformation .input_box .btn{
+#personalInfo .input_box .btn{
     width: 180px;
     height: 45px;
     color: #fff;
@@ -257,14 +257,14 @@ body{
     outline: none;
     border: none;
 }
-#changeInformation #error_box1{
+#personalInfo #error_box1{
     color: #fc0107;
     margin: 25px 64px 5px 187px;
 }
-#changeInformation .input_box .primary{
+#personalInfo .input_box .primary{
     margin: -16px 0 5px 167px;
 }
-#changeInformation .input_box .info{
+#personalInfo .input_box .info{
     margin:-6px 0 0 0;
 }
 

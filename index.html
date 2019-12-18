@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="../HealthExaminationSystem/lib/bootstrap-3.4.1-dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../HealthExaminationSystem/lib/bootstrap-3.4.1-dist/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="../HealthExaminationSystem/lib/bootstrap-3.4.1-dist/css/bootstrap-datetimepicker.css">
+        <link rel="stylesheet" href="../HealthExaminationSystem/lib/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="CSS/index.css">
         <link rel="icon" href="iconfont.ico">
         <base target="_self">
@@ -82,7 +83,7 @@
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">在线预约 <span class="iconfont">&#xe68b;</span></a>
                         <ul class="dropdown-menu">
-                            <li><a class="medicalRecord" href="#">体检记录</a></li>
+                            <li><a class="medicalRecord" href="#">预约记录</a></li>
                             <li><a class="appointment" href="#">在线预约</a></li>
                         </ul>
                     </li>
@@ -91,7 +92,7 @@
                     <li class="dropdown">
                         <a href="#" class="user" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">用户 <span class="iconfont">&#xe68b;</span></a>
                         <ul class="dropdown-menu">
-                            <li><a class="changeInformation" href="#">修改信息</a></li>
+                            <li><a class="personalInfo" href="#">修改信息</a></li>
                             <li><a onclick="fnLogOut()" class="logOut" href="#">退出登录</a></li>
                         </ul>
                     </li>
@@ -99,17 +100,11 @@
             </div>
 
             <!--预约-->
-            <form id="appointment" class="box" method="get" action="">
+            <form id="appointment" class="box" role="form" >
                 <span class="iconfont close fr">&#xe6a1;</span>
                 <div class="input_box3">
                     <span class="p3 fl">套餐类型：</span>
-                    <select name="province">
-                        <option>套餐一</option>
-                        <option>套餐二</option>
-                        <option>套餐三</option>
-                        <option>套餐四</option>
-                        <option>套餐五</option>
-                    </select>
+                    <select id="province" name="province"></select>
                 </div>
                 <div class="input-group">
                     <span class="p4">时&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间：</span>
@@ -122,28 +117,28 @@
             </form>
 
             <!--修改信息-->
-            <form id="changeInformation" class="box" method="get" action="">
+            <form id="personalInfo" class="box" role="form">
                 <span class="iconfont close fr">&#xe6a1;</span>
+                <div class="input_box3">
+                    <span class="p3">姓名：</span>
+                    <input id="nickname" type="text" name="nickname">
+                </div>
                 <div class="input_box1">
                     <span class="p1">性&nbsp;&nbsp;&nbsp;&nbsp;别：</span>
-                    <label><span class="iconfont c1 f1">&#xe603;男</span><input class="usex" type="radio" name="sex" checked ="checked"></label>
-                    <label><span class="iconfont c2 f1">&#xe604;女</span><input class="usex" type="radio" name="sex"></label>
-                </div>
-                <div class="input_box2">
-                    <span class="p2">年&nbsp;&nbsp;&nbsp;&nbsp;龄：</span>
-                    <input id="age" type="text" name="age">
+                    <label><span class="iconfont c1 f1">&#xe603;男</span><input class="gender" type="radio" name="gender" checked ="checked" value="Male"></label>
+                    <label><span class="iconfont c2 f1">&#xe604;女</span><input class="gender" type="radio" name="gender" value="FeMale"></label>
                 </div>
                 <div class="input_box3">
                     <span class="p3">手机号：</span>
-                    <input id="tel" type="text" name="tel">
+                    <input type="text" name="phone">
                 </div>
                 <div class="input_box4">
                     <span class="p4">身份证：</span>
-                    <input id="card" type="text" name="card">
+                    <input type="text" name="card">
                 </div>
                 <div id="error_box1"><br></div>
                 <div class="input_box">
-                    <button type="button" class="btn btn-info primary" onclick="fnchangeInformation()">确定</button>    
+                    <button type="button" class="btn btn-info primary" onclick="savePersonalInfo()">确定</button>    
                 </div>
             </form>
 
@@ -151,7 +146,7 @@
 
         <!--体检记录-->
         <div id="medicalRecord">
-            <form method="get" action="">
+            <form method="get" action="" >
                 <div class="searchContent clearfix">
                     <div class="searchBox fl">
                         <input type="text" id="txt" value="" />
@@ -165,33 +160,14 @@
             <table>
                 <thead>
                     <tr>
-                        <th>时间</th>
-                        <th class="set">套餐</th>
-                        <th>预约状态</th>
+                        <th>用户姓民</th>
+                        <th>套餐名称</th>
+                        <th>套餐指标</th>
+                        <th>指标意义</th>
+                        <th>预约时间</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>2015-10-1</td>
-                        <td>套餐一</td>
-                        <td>预约成功</td>
-                    </tr>
-                    <tr>
-                        <td>2016-10-1</td>
-                        <td>套餐一</td>
-                        <td>预约成功</td>
-                    </tr>
-                    <tr>
-                        <td>2017-10-1</td>
-                        <td>套餐一</td>
-                        <td>预约成功</td>
-                    </tr>
-                    <tr>
-                        <td>2018-10-1</td>
-                        <td>套餐一</td>
-                        <td>预约成功</td>
-                    </tr>
-                </tbody>
+                <tbody id="tableContent"></tbody>
             </table>
         </div>
 
@@ -276,9 +252,9 @@
         <script src="../HealthExaminationSystem/lib/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
         <script src="../HealthExaminationSystem/lib/bootstrap-3.4.1-dist/js/moment.js"></script>
         <script src="../HealthExaminationSystem/lib/bootstrap-3.4.1-dist/js/zh-cn.js"></script>
-        <script src="../HealthExaminationSystem/lib/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
         <script src="../HealthExaminationSystem/lib/bootstrap-datetimepicker/moment.js"></script>
         <script src="../HealthExaminationSystem/lib/bootstrap-datetimepicker/zh-cn.js"></script>
+        <script src="../HealthExaminationSystem/lib/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
         <script type="text/javascript" src="../HealthExaminationSystem/JS/util.js"></script>
         <script type="text/javascript" src="../HealthExaminationSystem/JS/index.js"></script>
         <script type="text/javascript" src="../HealthExaminationSystem/JS/default.js"></script>

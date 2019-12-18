@@ -11,4 +11,12 @@ var registerUrl = myUrl + "/service/rest/service.NoLoginService/collection/regis
 //获取所有套餐记录
 var getAllMedicalItemsUrl = myUrl + "/service/rest/service.NoLoginService/collection/getAllMedicalItems";
 //通过Jsessionid获取用户信息判断用户是否登录
-var  getUserBySessionIdUrl = myUrl + "/service/rest/service.NoLoginService/collection/getUserBySessionId";
+var getUserBySessionIdUrl = myUrl + "/service/rest/service.NoLoginService/collection/getUserBySessionId";
+//预约套餐
+var createReservationRecordUrl = myUrl + "/service/rest/service.LoginService/collection/createReservationRecord";
+//获取个人信息
+var getPersonalInfoUrl = myUrl + "/service/rest/service.LoginService/collection/getPersonalInfo";
+//修改个人信息
+var updateUserInfoUrl = myUrl + "/service/rest/service.LoginService/collection/updateUserInfo";
+//修改个人信息
+var queryReservationRecordUrl = myUrl + "/service/rest/service.LoginService/collection/queryReservationRecord";

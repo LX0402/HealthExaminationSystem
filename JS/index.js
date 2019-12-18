@@ -45,13 +45,16 @@ $(document).ready(function(){
 
 });
 function fnAppointment() {
-    var age = document.getElementById("age")
+    var province = document.getElementById("province")
     var time = document.getElementById("startTime")
     var oError = document.getElementById("error_box")
     var isError = true;
-    
-    if (age.value.length > 3 || age.value.length < 0) {
-        oError.innerHTML = "年龄有误"
+    var params = {
+        medicalId:province.value,
+        reservationTime:time.value
+    }
+    if(province.value == null){
+        oError.innerHTML = "请选择预约套餐"
         isError = false;
         return;
     }
@@ -60,8 +63,21 @@ function fnAppointment() {
         isError = false;
         return;
     }
-    window.alert("预约成功")
-    $("#appointment").hide()
+    //在这里使用Ajax请求
+    $.postExtend(createReservationRecordUrl, params, function(data){
+        console.log(data.data);
+        if(data.code == 0){
+            window.alert("预约成功")
+            $("#appointment").hide()
+        }else{
+            //仅用于测试
+            window.alert(data.message);
+            //清空form表单
+            $('#appointment').clearForm();
+            //在登录框上显示错误信息
+            oError.innerHTML = data.message;
+        }
+    });
 }
 
 /*-------------------------------------------------*/
@@ -197,16 +213,46 @@ function fnregister() {
 
 /*-------------------------------------------------*/
 
-/*修改信息*/
-$("#changeInformation").hide();
+/*个人信息*/
+$("#personalInfo").hide();
 $(document).ready(function(){
-    $(".changeInformation").click(function(){
-        $("#changeInformation").show();
+    /* 加载个人信息资料到form表单中 */
+    $(".personalInfo").click(function(){
+        $.postExtend(getPersonalInfoUrl,{}, function(data){
+            if(data.code == 0){
+                //将获取到的数据解析成对象
+                var dataParams = JSON.parse(data.data);
+                console.log(dataParams)
+                //将对象数据加载到fomr表单中,对应得基本条件：name与对象中的字段一致。详情研究请到 util.js 中查看源码。
+                $('#personalInfo').loadJson(dataParams);
+                $("#personalInfo").show();
+            }else{
+                window.alert(data.message)
+            }
+        });
     });
+    /* 隐藏form表单 */
     $(".iconfont").click(function(){
-        $("#changeInformation").hide();
+        $("#personalInfo").hide();
     });
 });
+
+/* 保存用户资料 */
+function savePersonalInfo(){
+    var info = $('#personalInfo').serializeObject();
+    console.log(info);
+    $.postExtend(updateUserInfoUrl,info,function(data){
+        console.log(data);
+        if(data.code == 0){
+            $("#personalInfo").hide();
+            window.alert(data.message);
+        }else{
+            window.alert(data.message)
+        }
+    });
+}
+
+
 
 /*-------------------------------------------------*/
 
@@ -245,11 +291,7 @@ setInterval(async function() {
         area.scrollTop(0);
     }
 }, delay);
-//套餐数据，需要将以下数据添加到静态页面中(其中 showImg 使用，myUrl + /service/rest/tk.File/fc507b71dab54d678ca610c20655a7ea)
-/*[
-    {\"suitableSex\":\"两者都\",\"ageMin\":16,\"ageMax\":100,\"createTime\":\"2019-11-23 13:06\",\"meaning\":\"通过仪器测量人体基本健康指标。例如：血压是否正常，有无体重偏低、超重或肥胖。\",\"medicalName\":\"一般检查A\",\"id\":\"fc073ea338f542b6a17d4ecdb5023e36\",\"items\":\"体重\",\"showImg\":\"b8c80b4f26cd4c1599644b19adc28db4\",\"isShow\":null},
-    {\"suitableSex\":\"两者都\",\"ageMin\":1,\"ageMax\":111,\"createTime\":\"2019-11-23 19:44\",\"meaning\":\"撒旦飞洒地方技术的技法卢卡斯京东方考虑\",\"medicalName\":\"一般检查B\",\"id\":\"edf09ad6bd654055911437be7a24db60\",\"items\":\"默认项目\",\"showImg\":\"fc507b71dab54d678ca610c20655a7ea\",\"isShow\":null}
-] */
+
 
 //进入网页调用该接口获取套餐信息
 $(
@@ -280,13 +322,14 @@ $(
                     //修改H5存储数据
                     sessionStorage.setItem('jsessionid','');
                 }
-            })
+            });
         }
 
         $.postExtend(getAllMedicalItemsUrl,{},function(data){
             if(data.code == 0 ){
                 var json = JSON.parse(data.data);
                 json.forEach(function(itemCount,index){
+                    console.log(itemCount);
                     /*加载导航栏数据*/
                     $("#sideNavUl").append("<li class='combo'>"+itemCount.medicalName+"<span class='iconfont fr'>&#xe63d;</span> </li>");
                     //加载图片(如果后台没有给出图片，你就要使用默认图片)
@@ -319,6 +362,9 @@ $(
                         $("#lunboBox>div").eq(index).show().siblings().hide();
 
                     })
+
+                    // 加载预约套餐form表单中的套餐下拉款
+                    $("#province").append("<option value='"+itemCount.id+"'>"+itemCount.medicalName+"</option>");
                 });
 
                 //计算导航栏个数
@@ -333,7 +379,29 @@ $(
             }else{
                 console.log("获取数据失败！");
             }
-        })
+        });
+
+        /* 获取并加载数据 */
+        $.postExtend(queryReservationRecordUrl,{},function(data){
+            if(data.code == 0){
+                var json = JSON.parse(data.data);
+                json.forEach(function(itemCount,index){
+                    console.log(itemCount);
+                    // 像表格中添加数据
+                    $("#tableContent").append("<tr> "+
+                        "<td>"+itemCount.userName+"</td>"+
+                        "<td>"+itemCount.medicalName+"</td>"+
+                        "<td>"+itemCount.meidicalContent+"</td>"+
+                        "<td>"+itemCount.meaning+"</td>"+
+                        "<td>"+itemCount.reservationTime+"</td>"+
+                        "</tr>"
+                    );
+                });
+            }else{
+                window.alert(data.message)
+            }
+        });
+
     }
 )
 
@@ -341,13 +409,6 @@ $(
 
 /*体检记录*/
 $(function () {
-
-    $('#appointment').datetimepicker({
-        format: 'YYYY-MM-DD',
-        locale: moment.locale('zh-cn')
-    });
-
-
     $("#btn").click(function () {
         var $sea=$('#txt').val();
         //先隐藏全部，再把符合筛选条件的值显示
@@ -355,6 +416,8 @@ $(function () {
     });
 });
 $(document).ready(function(){
+
+    /* 导航栏预约记录点击事件 */
     $(".medicalRecord").click(function(){
         $("#medicalRecord").show();
         $("#myCarousel").hide()
@@ -362,6 +425,7 @@ $(document).ready(function(){
         $("#introduce").hide()
         $("#contact").hide()
     });
+    /* 导航栏产品点击时间 */
     $(".firstScreen").click(function(){
         $("#medicalRecord").hide();
         $("#myCarousel").show()
@@ -369,6 +433,7 @@ $(document).ready(function(){
         $("#introduce").show()
         $("#contact").show()
     });
+    /* 导航栏首页点击时间 */
     $(".main").click(function(){
         $("#medicalRecord").hide();
         $("#myCarousel").show()
