@@ -35,7 +35,12 @@ setInterval(async function() {
 
 /*预约*/
 $("#appointment").hide()
+$(".bootstrap-datetimepicker-widget").show()
 $(document).ready(function(){
+    $('#appointment').datetimepicker({
+        format: 'YYYY-MM-DD',
+        locale: moment.locale('zh-cn')
+    });
     $(".appointment").click(function(){
         $("#appointment").show();
     });
