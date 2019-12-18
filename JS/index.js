@@ -303,7 +303,7 @@ $(
         var jessionid= localStorage.getItem('jsessionid');
         console.log(jessionid)
         //判断用户是否登录
-        if(jessionid != ""){
+        if(jessionid != null && jessionid != ''){
             var params = { jessionid:jessionid }
             $.postExtend(getUserBySessionIdUrl,params,function(data){
                 console.log(data);
@@ -326,6 +326,28 @@ $(
                     sessionStorage.setItem('jsessionid','');
                 }
             });
+
+            /* 获取并加载数据 */
+            $.postExtend(queryReservationRecordUrl,{},function(data){
+                if(data.code == 0){
+                    var json = JSON.parse(data.data);
+                    json.forEach(function(itemCount,index){
+                        console.log(itemCount);
+                        // 像表格中添加数据
+                        $("#tableContent").append("<tr> "+
+                            "<td>"+itemCount.userName+"</td>"+
+                            "<td>"+itemCount.medicalName+"</td>"+
+                            "<td>"+itemCount.meidicalContent+"</td>"+
+                            "<td>"+itemCount.meaning+"</td>"+
+                            "<td>"+itemCount.reservationTime+"</td>"+
+                            "</tr>"
+                        );
+                    });
+                }else{
+                    window.alert(data.message)
+                }
+            });
+
         }
 
         $.postExtend(getAllMedicalItemsUrl,{},function(data){
@@ -385,26 +407,7 @@ $(
             }
         });
 
-        /* 获取并加载数据 */
-        $.postExtend(queryReservationRecordUrl,{},function(data){
-            if(data.code == 0){
-                var json = JSON.parse(data.data);
-                json.forEach(function(itemCount,index){
-                    console.log(itemCount);
-                    // 像表格中添加数据
-                    $("#tableContent").append("<tr> "+
-                        "<td>"+itemCount.userName+"</td>"+
-                        "<td>"+itemCount.medicalName+"</td>"+
-                        "<td>"+itemCount.meidicalContent+"</td>"+
-                        "<td>"+itemCount.meaning+"</td>"+
-                        "<td>"+itemCount.reservationTime+"</td>"+
-                        "</tr>"
-                    );
-                });
-            }else{
-                window.alert(data.message)
-            }
-        });
+       
 
     }
 )
