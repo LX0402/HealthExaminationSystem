@@ -378,7 +378,7 @@ $(
                 console.log(i);
                 $(".combo").css({height:i});
                 //错误内容，需求：导航栏文字居中对齐
-                $("#sideNavUl li").attr("line-height",i);
+                $("#sideNavUl").find("li").attr("line-height",i);
                  
             }else{
                 console.log("获取数据失败！");

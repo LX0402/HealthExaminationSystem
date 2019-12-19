@@ -293,17 +293,20 @@ body{
     height: 551px;
     border: 1px solid #8eddfad8;
     box-sizing: border-box;
+    display: flexbox;
 }
  .sideNav li{
     color: #999;
     font-size: 14px;
     font-weight: bold;
+    
     /*过度背景色*/
     transition: background-color 0.3s;
     overflow: hidden;
     white-space: nowrap;
     cursor: pointer;
-    /* 垂直居中 */
+    text-align: center;
+    
 }
  .sideNav li a{
     font-size: 15px;
