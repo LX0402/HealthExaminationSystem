@@ -217,7 +217,7 @@ function fnregister() {
 
 /*-------------------------------------------------*/
 
-/*个人信息*/
+/*修改个人信息*/
 $("#personalInfo").hide();
 $(document).ready(function(){
     /* 加载个人信息资料到form表单中 */
@@ -255,8 +255,6 @@ function savePersonalInfo(){
         }
     });
 }
-
-
 
 /*-------------------------------------------------*/
 
@@ -425,7 +423,6 @@ $(function () {
     });
 });
 $(document).ready(function(){
-
     /* 导航栏预约记录点击事件 */
     $(".medicalRecord").click(function(){
         $("#medicalRecord").show();
@@ -434,7 +431,7 @@ $(document).ready(function(){
         $("#introduce").hide()
         $("#contact").hide()
     });
-    /* 导航栏产品点击时间 */
+    /* 导航栏产品点击事件 */
     $(".firstScreen").click(function(){
         $("#medicalRecord").hide();
         $("#myCarousel").show()
@@ -442,7 +439,7 @@ $(document).ready(function(){
         $("#introduce").show()
         $("#contact").show()
     });
-    /* 导航栏首页点击时间 */
+    /* 导航栏首页点击事件 */
     $(".main").click(function(){
         $("#medicalRecord").hide();
         $("#myCarousel").show()

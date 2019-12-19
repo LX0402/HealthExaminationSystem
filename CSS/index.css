@@ -50,17 +50,23 @@ body{
     top: 140px;
 }
 #login .input_box1,
-#login .input_box2{
+#login .input_box2,
+#register .input_box2,
+#register .input_box3{
     width: 300px;
     margin: 60px auto;
 }
 #login .input_box1 #name,
-#login .input_box2 #pass{
+#login .input_box2 #pass,
+#register .input_box2 #pass1,
+#register .input_box3 #tel{
     width: 250px;
     outline: none;
 }
 #login .input_box1 #name,
-#login .input_box2 #pass{
+#login .input_box2 #pass,
+#register .input_box2 #pass1,
+#register .input_box3 #tel{
     margin: 0 5px 0;
     position: absolute;
 }
@@ -71,50 +77,28 @@ body{
     border: none;
 }
 #login #error_box,
-#personalInfo #error_box1{
+#personalInfo #error_box1,
+#register #error_box1{
     color: #fc0107;
-    margin: 25px 64px 5px 187px;
+    margin: -31px 187px 25px;
 }
 #login .input_box .primary{
-    margin: -80px 64px 5px 116px;
+    margin: 0 64px 5px 116px;
 }
 #login .input_box .info{
-    margin:-89px 0 0 0;
+    margin:-4px 0 0;
 }
 
 /*-------------------------------------------------*/
 
 /*注册*/
-#register #error_box1,
-#appointment #error_box1{
-    color: #fc0107;
-    margin: 17px 64px 5px 190px;
-}
-#register .input_box2{
-    width: 300px;
-    margin: 40px auto;
-}
-#register .input_box3{
-    width: 300px;
-    margin: 75px auto;
-}
-#register .input_box2 #pass1,
-#register .input_box3 #tel{
-    width: 250px;
-    outline: none;
-}
-#register .input_box2 #pass1,
-#register .input_box3 #tel{
-    margin: 0 5px 0;
-    position: absolute;
-}
 #register .input_box .btn{
     width: 175px;
     height: 45px;
     outline: none;
     border: none;
     font-size: 16px;
-    margin: 0 0 0 180px;
+    margin: 0 160px 0;
 }
 
 /*轮播图*/
@@ -149,7 +133,7 @@ body{
 #appointment .input_box3 select{
     color: #4b4848;
     text-indent: 5px;
-    margin: -2px 0;
+    margin: 0 16px;
 }
 #appointment .input-group{
     width: 213px;
@@ -162,14 +146,14 @@ body{
     width: 120px;
     outline: none;
     border: none;
-    margin: 0px 185px;
+    margin: 17px 185px;
 }
 
 /*-------------------------------------------------*/
 
 /*修改信息*/
 #personalInfo .input_box1{
-    margin: 25px 153px 0 ;
+    margin: 0 0 0 153px;
 }
 #personalInfo .input_box1 .gender{
     vertical-align: middle;
@@ -188,10 +172,10 @@ body{
     outline: none;
 }
 #personalInfo .input_box3{
-    margin: 10px 153px 0;
+    margin: 15px 153px 0;
 }
 #personalInfo .input_box4{
-    margin: 30px 153px 0;
+    margin: 25px 153px 0;
 }
 #personalInfo .input_box4 #card{
     margin: 30px 5px 0;
@@ -204,10 +188,10 @@ body{
     border: none;
 }
 #personalInfo .input_box .primary{
-    margin: -16px 0 5px 167px;
+    margin: 25px 180px 0;
 }
 #personalInfo .input_box .info{
-    margin:-6px 0 0 0;
+    margin:-6px 0 0;
 }
 
 /*-------------------------------------------------*/
@@ -261,7 +245,7 @@ body{
 }
 #medicalRecord .searchContent button{
     width: 74px;
-    height: 38px;
+    height: 40px;
     text-align: center;
     font-size: 18px;
     line-height: 40px;
